@@ -32,7 +32,7 @@
         <!-- Slides Container -->
         <div id="heroSlides" class="w-full h-full relative">
             <!-- Slide 1 -->
-            <div class="hero-slide absolute w-full h-full flex justify-between items-center px-20 overflow-hidden">
+            <div class="hero-slide active absolute w-full h-full flex justify-between items-center px-20 overflow-hidden">
                 <!-- Background SVG -->
                 <div class="absolute inset-0 z-0">
                     <svg viewBox="0 0 1000 1000" preserveAspectRatio="none" class="w-full h-full">
@@ -84,24 +84,24 @@
                     <button class="mt-4 bg-green-600 text-white px-8 py-3 rounded hover:bg-green-700">Explorar</button>
                 </div>
                 <div class="flex-1 relative h-full z-10">
-                    <img src="assets/Salada.png" alt="Suco de Laranja" class="absolute right-0 w-[650px] h-auto object-contain transform scale-125">
+                    <img src="assets/Salada.webp" alt="Diversos Legumes e Saladas" class="absolute right-0 w-[700px] h-auto object-contain transform scale-125">
                 </div>
             </div>
         </div>
 
         <!-- Navigation Buttons -->
-        <button id="prevHeroBtn" class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-gray-100 text-gray-700 rounded-full w-10 h-10 flex items-center justify-center hover:bg-gray-200 transition-colors">
+        <button id="prevHeroBtn" class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/80 text-gray-700 rounded-full w-10 h-10 flex items-center justify-center hover:bg-white transition-colors z-20">
             <i class="fa-solid fa-chevron-left"></i>
         </button>
-        <button id="nextHeroBtn" class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-gray-100 text-gray-700 rounded-full w-10 h-10 flex items-center justify-center hover:bg-gray-200 transition-colors">
+        <button id="nextHeroBtn" class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/80 text-gray-700 rounded-full w-10 h-10 flex items-center justify-center hover:bg-white transition-colors z-20">
             <i class="fa-solid fa-chevron-right"></i>
         </button>
 
         <!-- Dots Navigation -->
-        <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
-            <button class="hero-dot w-3 h-3 rounded-full bg-gray-300 hover:bg-gray-400 transition-colors"></button>
-            <button class="hero-dot w-3 h-3 rounded-full bg-gray-300 hover:bg-gray-400 transition-colors"></button>
-            <button class="hero-dot w-3 h-3 rounded-full bg-gray-300 hover:bg-gray-400 transition-colors"></button>
+        <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2 z-20">
+            <button class="hero-dot w-3 h-3 rounded-full bg-white/50 hover:bg-white transition-colors"></button>
+            <button class="hero-dot w-3 h-3 rounded-full bg-white/50 hover:bg-white transition-colors"></button>
+            <button class="hero-dot w-3 h-3 rounded-full bg-white/50 hover:bg-white transition-colors"></button>
         </div>
     </section>
 
@@ -299,58 +299,89 @@
         });
 
         // Hero Slider Functionality
-        document.addEventListener('DOMContentLoaded', function() {
-            const slides = document.querySelectorAll('.hero-slide');
-            const dots = document.querySelectorAll('.hero-dot');
-            const prevBtn = document.getElementById('prevHeroBtn');
-            const nextBtn = document.getElementById('nextHeroBtn');
-            let currentSlide = 0;
+        const slides = document.querySelectorAll('.hero-slide');
+        const dots = document.querySelectorAll('.hero-dot');
+        const prevBtn = document.getElementById('prevHeroBtn');
+        const nextBtn = document.getElementById('nextHeroBtn');
+        let currentSlide = 0;
 
-            function showSlide(index) {
-                slides.forEach(slide => {
-                    slide.style.opacity = '0';
-                    slide.style.transition = 'opacity 0.5s ease-in-out';
-                });
-                
-                dots.forEach(dot => {
-                    dot.classList.remove('bg-white');
-                    dot.classList.add('bg-white/50');
-                });
-
-                slides[index].style.opacity = '1';
-                dots[index].classList.remove('bg-white/50');
-                dots[index].classList.add('bg-white');
-            }
-
-            function nextSlide() {
-                currentSlide = (currentSlide + 1) % slides.length;
-                showSlide(currentSlide);
-            }
-
-            function prevSlide() {
-                currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-                showSlide(currentSlide);
-            }
-
-            // Event Listeners
-            nextBtn.addEventListener('click', nextSlide);
-            prevBtn.addEventListener('click', prevSlide);
-
-            dots.forEach((dot, index) => {
-                dot.addEventListener('click', () => {
-                    currentSlide = index;
-                    showSlide(currentSlide);
-                });
+        function showSlide(index) {
+            console.log('Showing slide:', index); // Debug log
+            slides.forEach(slide => {
+                slide.classList.remove('active');
+            });
+            
+            dots.forEach(dot => {
+                dot.classList.remove('bg-white');
+                dot.classList.add('bg-white/50');
             });
 
-            // Auto slide every 5 seconds
-            setInterval(nextSlide, 5000);
+            slides[index].classList.add('active');
+            dots[index].classList.remove('bg-white/50');
+            dots[index].classList.add('bg-white');
+        }
+
+        function nextSlide() {
+            console.log('Next slide clicked'); // Debug log
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        }
+
+        function prevSlide() {
+            console.log('Prev slide clicked'); // Debug log
+            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+            showSlide(currentSlide);
+        }
+
+        // Event Listeners
+        document.addEventListener('DOMContentLoaded', function() {
+            // Products Slider
+            const productsContainer = document.getElementById('productsContainer');
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            const shopBtnContainer = document.getElementById('shopBtnContainer');
+            
+            // ... rest of the products slider code ...
         });
+
+        // Hero Slider Event Listeners
+        nextBtn.addEventListener('click', nextSlide);
+        prevBtn.addEventListener('click', prevSlide);
+
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                currentSlide = index;
+                showSlide(currentSlide);
+            });
+        });
+
+        // Auto slide every 5 seconds
+        setInterval(nextSlide, 5000);
     </script>
 
     <style>
         #productsContainer {
             position: relative;
+        }
+
+        .hero-slide {
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+            pointer-events: none;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+
+        .hero-slide.active {
+            opacity: 1;
+            pointer-events: auto;
+            z-index: 1;
+        }
+
+        #prevHeroBtn, #nextHeroBtn {
+            z-index: 10;
+            pointer-events: auto;
         }
     </style>
 
