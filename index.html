@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Organic Supermarket</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/447127b9bf.js" crossorigin="anonymous"></script>
+    <style>
+        .hover-underline::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 2px;
+            background: green;
+            transition: width 0.3s ease-in-out;
+            margin: auto;
+        }
+        .hover-underline:hover::after {
+            width: 100%;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 font-[Poppins]">
+    <!-- Navbar -->
+    <nav class="bg-white shadow-md py-4 px-6 flex justify-between items-center">
+        <div class="text-green-600 text-2xl font-bold"><a href="index.html">Supermarket🌿</a></div>
+        <ul class="flex space-x-6 text-gray-700 text-lg">
+            <li class="font-semibold border-b-2 border-green-500 hover-underline">Home</li>
+            <li class="hover:text-green-500 cursor-pointer hover-underline">Shop</li>
+            <li class="hover:text-green-500 cursor-pointer hover-underline">Page</li>
+            <li class="hover:text-green-500 cursor-pointer hover-underline">About</li>
+            <li class="hover:text-green-500 cursor-pointer hover-underline">Contact</li>
+        </ul>
+        <div class="flex space-x-4 text-xl">
+            <span class="cursor-pointer"><i class="fa-solid fa-magnifying-glass text-gray-700"></i></span>
+            <span class="cursor-pointer"><i class="fa-solid fa-cart-shopping text-gray-700"></i></span>
+            <span class="cursor-pointer"><i class="fa-solid fa-user text-gray-700"></i></span>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="bg-lime-500 h-[50vh] flex flex-col justify-center items-center text-center relative">
+        <h1 class="text-4xl font-bold text-white">Natural 100% Organic</h1>
+        <p class="text-white mt-2">50% discount on bottled apple juice this week</p>
+        <button class="mt-4 bg-green-600 text-white px-6 py-2 rounded-full">View Details</button>
+    </section>
+
+    <!-- Our Products Section -->
+
+    <section class="py-16 px-6">
+        <h2 class="text-3xl font-bold text-center">Our Products</h2>
+        <div class="flex justify-center space-x-6 mt-6 border-b-2 pb-4">
+            <p class="text-green-600 font-semibold border-b-2 border-green-600 cursor-pointer">Food & Drinks</p>
+            <p class="hover:text-green-500 cursor-pointer hover-underline">Bread & Cake</p>
+            <p class="hover:text-green-500 cursor-pointer hover-underline">Dried Foods</p>
+            <p class="hover:text-green-500 cursor-pointer hover-underline">Fish & Meat</p>
+            <p class="hover:text-green-500 cursor-pointer hover-underline">Vegetables</p>
+        </div>
+
+        <div class="grid grid-cols-4 gap-6 mt-8">
+            <div class="bg-white p-4 shadow-md text-center">
+                <img src="./assets/" alt="Mango" class="mx-auto">
+                <p class="font-semibold">Manga</p>
+                <p class="text-green-500">R$8.00</p>
+            </div>
+            <div class="bg-white p-4 shadow-md text-center">
+                <img src="" alt="Berries" class="mx-auto">
+                <p class="font-semibold">Frutas Silvestres</p>
+                <p class="text-green-500">R$7.00 <span class="line-through text-gray-400">$8.50</span></p>
+            </div>
+            <div class="bg-white p-4 shadow-md text-center">
+                <img src="" alt="Oranges" class="mx-auto">
+                <p class="font-semibold">Laranja Bahia</p>
+                <p class="text-green-500">R$3.90 <span class="line-through text-gray-400">$6.00</span></p>
+            </div>
+            <div class="bg-white p-4 shadow-md text-center">
+                <img src="" alt="Broccoli" class="mx-auto">
+                <p class="font-semibold">Brócolis Japonês</p>
+                <p class="text-green-500">R$3.00</p>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
