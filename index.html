@@ -21,17 +21,88 @@
             <li class="hover:text-green-500 cursor-pointer hover-underline">Contact</li>
         </ul>
         <div class="flex space-x-4 text-xl">
-            <span class="cursor-pointer"><i class="fa-solid fa-magnifying-glass text-gray-700"></i></span>
-            <span class="cursor-pointer"><i class="fa-solid fa-cart-shopping text-gray-700"></i></span>
-            <span class="cursor-pointer"><i class="fa-solid fa-user text-gray-700"></i></span>
+            <span class="cursor-pointer"><i class="fa-solid fa-magnifying-glass text-gray-700 hover:text-green-500  cursor-pointer hover-underline"></i></span>
+            <span class="cursor-pointer"><i class="fa-solid fa-cart-shopping text-gray-700  hover:text-green-500  cursor-pointer hover-underline"></i></span>
+            <span class="cursor-pointer"><i class="fa-solid fa-user text-gray-700  hover:text-green-500  cursor-pointer hover-underline"></i></span>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="bg-lime-500 h-[50vh] flex flex-col justify-center items-center text-center relative">
-        <h1 class="text-4xl font-bold text-white">Natural 100% Organic</h1>
-        <p class="text-white mt-2">50% discount on bottled apple juice this week</p>
-        <button class="mt-4 bg-green-600 text-white px-6 py-2 rounded-full">View Details</button>
+    <section class="bg-white h-[80vh] flex flex-col justify-center items-center text-center relative overflow-hidden">
+        <!-- Slides Container -->
+        <div id="heroSlides" class="w-full h-full relative">
+            <!-- Slide 1 -->
+            <div class="hero-slide absolute w-full h-full flex justify-between items-center px-20 overflow-hidden">
+                <!-- Background SVG -->
+                <div class="absolute inset-0 z-0">
+                    <svg viewBox="0 0 1000 1000" preserveAspectRatio="none" class="w-full h-full">
+                        <path d="M0,200 C300,400 700,100 1000,300 L1000,1000 L0,1000 Z" class="fill-lime-500"></path>
+                        <path d="M0,400 C300,600 700,300 1000,500 L1000,1000 L0,1000 Z" class="fill-lime-500/5"></path>
+                    </svg>
+                </div>
+                <div class="text-left max-w-lg z-10">
+                    <p class="text-green-600 text-sm font-semibold mb-2">Produtos Orgânicos da Melhor Qualidade</p>
+                    <h1 class="text-5xl font-bold text-gray-800 mb-4">Gostosos e Saudáveis<br>Comida Orgânica</h1>
+                    <button class="mt-4 bg-green-600 text-white px-8 py-3 rounded hover:bg-green-700">Shop Now</button>
+                </div>
+                <div class="flex-1 relative h-full z-10">
+                    <img src="assets/Brocoli.webp" alt="Vegetais Orgânicos" class="absolute right-0 -bottom-5 w-[575px] h-auto object-contain transform scale-125">
+                </div>
+            </div>
+            
+            <!-- Slide 2 -->
+            <div class="hero-slide absolute w-full h-full flex justify-between items-center px-20 overflow-hidden opacity-0">
+                <!-- Background SVG -->
+                <div class="absolute inset-0 z-0">
+                    <svg viewBox="0 0 1000 1000" preserveAspectRatio="none" class="w-full h-full">
+                        <path d="M0,200 C300,400 700,100 1000,300 L1000,1000 L0,1000 Z" class="fill-lime-500"></path>
+                        <path d="M0,400 C300,600 700,300 1000,500 L1000,1000 L0,1000 Z" class="fill-lime-500/5"></path>
+                    </svg>
+                </div>
+                <div class="text-left max-w-lg z-10">
+                    <p class="text-green-600 text-sm font-semibold mb-2">Frutas Frescas da Estação</p>
+                    <h1 class="text-5xl font-bold text-gray-800 mb-4">Frutas Frescas<br>& Saudáveis</h1>
+                    <button class="mt-4 bg-green-600 text-white px-8 py-3 rounded hover:bg-green-700">Ver Ofertas</button>
+                </div>
+                <div class="flex-1 relative h-full z-10">
+                    <img src="assets/Frutas.webp" alt="Frutas Frescas" class="absolute right-0 -bottom-5 w-[675px] h-auto object-contain transform scale-125">
+                </div>
+            </div>
+            
+            <!-- Slide 3 -->
+            <div class="hero-slide absolute w-full h-full flex justify-between items-center px-20 overflow-hidden opacity-0">
+                <!-- Background SVG -->
+                <div class="absolute inset-0 z-0">
+                    <svg viewBox="0 0 1000 1000" preserveAspectRatio="none" class="w-full h-full">
+                        <path d="M0,200 C300,400 700,100 1000,300 L1000,1000 L0,1000 Z" class="fill-lime-500"></path>
+                        <path d="M0,400 C300,600 700,300 1000,500 L1000,1000 L0,1000 Z" class="fill-lime-500/5"></path>
+                    </svg>
+                </div>
+                <div class="text-left max-w-lg z-10">
+                    <p class="text-green-600 text-sm font-semibold mb-2">Salada e Legumes Selecionados</p>
+                    <h1 class="text-5xl font-bold text-gray-800 mb-4">Salada<br>& Legumes Orgânicos</h1>
+                    <button class="mt-4 bg-green-600 text-white px-8 py-3 rounded hover:bg-green-700">Explorar</button>
+                </div>
+                <div class="flex-1 relative h-full z-10">
+                    <img src="assets/Salada.png" alt="Suco de Laranja" class="absolute right-0 w-[650px] h-auto object-contain transform scale-125">
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation Buttons -->
+        <button id="prevHeroBtn" class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-gray-100 text-gray-700 rounded-full w-10 h-10 flex items-center justify-center hover:bg-gray-200 transition-colors">
+            <i class="fa-solid fa-chevron-left"></i>
+        </button>
+        <button id="nextHeroBtn" class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-gray-100 text-gray-700 rounded-full w-10 h-10 flex items-center justify-center hover:bg-gray-200 transition-colors">
+            <i class="fa-solid fa-chevron-right"></i>
+        </button>
+
+        <!-- Dots Navigation -->
+        <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+            <button class="hero-dot w-3 h-3 rounded-full bg-gray-300 hover:bg-gray-400 transition-colors"></button>
+            <button class="hero-dot w-3 h-3 rounded-full bg-gray-300 hover:bg-gray-400 transition-colors"></button>
+            <button class="hero-dot w-3 h-3 rounded-full bg-gray-300 hover:bg-gray-400 transition-colors"></button>
+        </div>
     </section>
 
     <!-- Destaques Section -->
@@ -78,8 +149,7 @@
     </section>
 
     <!-- Our Products Section -->
-
-    <section class="py-16 px-6">
+    <section class="py-6 px-6 relative">
         <h2 class="text-3xl font-bold text-center">Our Products</h2>
         <div class="flex justify-center space-x-6 mt-6 border-b-2 pb-4">
             <p class="text-green-600 font-semibold border-b-2 border-green-600 cursor-pointer">Food & Drinks</p>
@@ -89,31 +159,271 @@
             <p class="hover:text-green-500 cursor-pointer hover-underline">Vegetables</p>
         </div>
 
-        <div class="grid grid-cols-4 gap-6 mt-8">
-            <div class="bg-white p-4 shadow-md text-center">
-                <img src="assets/Mango.webp" alt="Mango" class="mx-auto">
-                <p class="font-semibold">Manga</p>
-                <p class="text-green-500">R$8.00</p>
-            </div>
-            <div class="bg-white p-4 shadow-md text-center">
-                <img src="assets/Berries.webp" alt="Berries" class="mx-auto">
-                <p class="font-semibold">Frutas Silvestres</p>
-                <p class="text-green-500">R$7.00 <span class="line-through text-gray-400">$8.50</span></p>
-            </div>
-            <div class="bg-white p-4 shadow-md text-center">
-                <img src="assets/Oranges.webp" alt="Oranges" class="mx-auto">
-                <p class="font-semibold">Laranja Bahia</p>
-                <p class="text-green-500">R$3.90 <span class="line-through text-gray-400">$6.00</span></p>
-            </div>
-            <div class="bg-white p-4 shadow-md text-center">
-                <img src="assets/Brocoli.webp" alt="Broccoli" class="mx-auto">
-                <p class="font-semibold">Brócolis Japonês</p>
-                <p class="text-green-500">R$3.00</p>
+        <!-- Navigation Arrows -->
+        <button id="prevBtn" class="absolute left-2 top-1/2 transform -translate-y-1/2 bg-lime-500 text-white rounded-full w-10 h-10 flex items-center justify-center shadow-lg hover:bg-lime-600 transition-colors hidden">
+            <i class="fa-solid fa-chevron-left"></i>
+        </button>
+        <button id="nextBtn" class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-lime-500 text-white rounded-full w-10 h-10 flex items-center justify-center shadow-lg hover:bg-lime-600 transition-colors">
+            <i class="fa-solid fa-chevron-right"></i>
+        </button>
+        <!-- Shop Button (Initially Hidden) -->
+        <a href="#" id="shopBtnContainer" class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-lime-500 text-white px-4 py-2 rounded-md hover:bg-lime-600 transition-colors text-sm font-medium hidden">
+            Shop
+        </a>
+
+        <div class="overflow-hidden mt-8">
+            <div id="productsContainer" class="grid grid-cols-4 gap-6 max-w-6xl mx-auto">
+                <!-- Original Products -->
+                <div class="bg-white p-4 shadow-md text-center product-card">
+                    <img src="assets/Mango.webp" alt="Manga" class="mx-auto">
+                    <p class="font-semibold">Manga</p>
+                    <p class="text-green-500">R$8.00</p>
+                </div>
+                <div class="bg-white p-4 shadow-md text-center product-card">
+                    <img src="assets/Berries.webp" alt="Berries" class="mx-auto">
+                    <p class="font-semibold">Frutas Silvestres</p>
+                    <p class="text-green-500">R$7.00 <span class="line-through text-gray-400">$8.50</span></p>
+                </div>
+                <div class="bg-white p-4 shadow-md text-center product-card">
+                    <img src="assets/Oranges.webp" alt="Oranges" class="mx-auto">
+                    <p class="font-semibold">Laranja Bahia</p>
+                    <p class="text-green-500">R$3.90 <span class="line-through text-gray-400">$6.00</span></p>
+                </div>
+                <div class="bg-white p-4 shadow-md text-center product-card">
+                    <img src="assets/Brocoli.webp" alt="Broccoli" class="mx-auto">
+                    <p class="font-semibold">Brócolis Japonês</p>
+                    <p class="text-green-500">R$3.00</p>
+                </div>
             </div>
         </div>
     </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const productsContainer = document.getElementById('productsContainer');
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            const shopBtnContainer = document.getElementById('shopBtnContainer');
+            
+            // Array com todos os produtos
+            const allProducts = [
+                // Produtos iniciais (0-3)
+                {
+                    img: "assets/Mango.webp",
+                    name: "Manga",
+                    price: "R$8.00"
+                },
+                {
+                    img: "assets/Berries.webp",
+                    name: "Frutas Silvestres",
+                    price: "R$7.00",
+                    oldPrice: "$8.50"
+                },
+                {
+                    img: "assets/Oranges.webp",
+                    name: "Laranja Bahia",
+                    price: "R$3.90",
+                    oldPrice: "$6.00"
+                },
+                {
+                    img: "assets/Brocoli.webp",
+                    name: "Brócolis Japonês",
+                    price: "R$3.00"
+                },
+                // Produtos adicionais (4-6)
+                {
+                    img: "assets/Abacate.webp",
+                    name: "Abacate",
+                    price: "R$5.50"
+                },
+                {
+                    img: "assets/Maçã.webp",
+                    name: "Maçã Fuji",
+                    price: "R$4.20",
+                    oldPrice: "$5.00"
+                },
+                {
+                    img: "assets/Pera.webp",
+                    name: "Pêra Williams",
+                    price: "R$6.90"
+                }
+            ];
+            
+            let currentStartIndex = 0;
+            const totalProducts = allProducts.length;
+            
+            function createProductCard(product) {
+                return `
+                    <div class="bg-white p-4 shadow-md text-center product-card">
+                        <img src="${product.img}" alt="${product.name}" class="mx-auto">
+                        <p class="font-semibold">${product.name}</p>
+                        <p class="text-green-500">${product.price} ${product.oldPrice ? `<span class="line-through text-gray-400">${product.oldPrice}</span>` : ''}</p>
+                    </div>
+                `;
+            }
+            
+            function updateProducts() {
+                const currentProducts = allProducts.slice(currentStartIndex, currentStartIndex + 4);
+                productsContainer.innerHTML = currentProducts.map(product => createProductCard(product)).join('');
+            }
+            
+            function updateNavigation() {
+                prevBtn.classList.toggle('hidden', currentStartIndex === 0);
+                nextBtn.classList.toggle('hidden', currentStartIndex >= totalProducts - 4);
+                
+                if (currentStartIndex === totalProducts - 4) {
+                    shopBtnContainer.classList.remove('hidden');
+                } else {
+                    shopBtnContainer.classList.add('hidden');
+                }
+            }
+            
+            nextBtn.addEventListener('click', () => {
+                if (currentStartIndex < totalProducts - 4) {
+                    currentStartIndex++;
+                    updateProducts();
+                    updateNavigation();
+                }
+            });
+            
+            prevBtn.addEventListener('click', () => {
+                if (currentStartIndex > 0) {
+                    currentStartIndex--;
+                    updateProducts();
+                    updateNavigation();
+                }
+            });
+            
+            // Inicializar estado dos botões
+            updateNavigation();
+        });
+
+        // Hero Slider Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const slides = document.querySelectorAll('.hero-slide');
+            const dots = document.querySelectorAll('.hero-dot');
+            const prevBtn = document.getElementById('prevHeroBtn');
+            const nextBtn = document.getElementById('nextHeroBtn');
+            let currentSlide = 0;
+
+            function showSlide(index) {
+                slides.forEach(slide => {
+                    slide.style.opacity = '0';
+                    slide.style.transition = 'opacity 0.5s ease-in-out';
+                });
+                
+                dots.forEach(dot => {
+                    dot.classList.remove('bg-white');
+                    dot.classList.add('bg-white/50');
+                });
+
+                slides[index].style.opacity = '1';
+                dots[index].classList.remove('bg-white/50');
+                dots[index].classList.add('bg-white');
+            }
+
+            function nextSlide() {
+                currentSlide = (currentSlide + 1) % slides.length;
+                showSlide(currentSlide);
+            }
+
+            function prevSlide() {
+                currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+                showSlide(currentSlide);
+            }
+
+            // Event Listeners
+            nextBtn.addEventListener('click', nextSlide);
+            prevBtn.addEventListener('click', prevSlide);
+
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', () => {
+                    currentSlide = index;
+                    showSlide(currentSlide);
+                });
+            });
+
+            // Auto slide every 5 seconds
+            setInterval(nextSlide, 5000);
+        });
+    </script>
+
+    <style>
+        #productsContainer {
+            position: relative;
+        }
+    </style>
+
     <footer>
-        
+        <!-- Footer Section -->
+        <div class="bg-lime-500 text-white py-12">
+            <div class="max-w-7xl mx-auto px-4 grid grid-cols-12 gap-4">
+                <!-- User Area -->
+                <div class="col-span-2">
+                    <h3 class="text-xl font-semibold mb-4">Área do Usuário</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-gray-200">Minha Conta</a></li>
+                        <li><a href="#" class="hover:text-gray-200">Meu Carrinho</a></li>
+                        <li><a href="#" class="hover:text-gray-200">Login</a></li>
+                        <li><a href="#" class="hover:text-gray-200">Checkout</a></li>
+                    </ul>
+                </div>
+
+                <!-- Shopping Guide -->
+                <div class="col-span-2">
+                    <h3 class="text-xl font-semibold mb-4">Guia de Compras</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-gray-200">Pagamento</a></li>
+                        <li><a href="#" class="hover:text-gray-200">Envio</a></li>
+                        <li><a href="#" class="hover:text-gray-200">FAQ</a></li>
+                        <li><a href="#" class="hover:text-gray-200">Política de Devolução</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Details -->
+                <div class="col-span-3 ml-8">
+                    <h3 class="text-xl font-semibold mb-4">Contato</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-location-dot"></i>
+                            <span>Setor Comercial Sul, Brasília-DF, Brasil</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-phone"></i>
+                            <span>(61) 1234-5678</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-envelope"></i>
+                            <span>contato@supermercado.com</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Newsletter -->
+                <div class="col-span-4 ml-12">
+                    <h3 class="text-xl font-semibold mb-4">Newsletter</h3>
+                    <div class="flex flex-col gap-4">
+                        <input type="email" placeholder="Seu e-mail" class="px-4 py-2 rounded-full text-gray-800">
+                        <button class="bg-green-600 hover:bg-green-700 px-6 py-2 rounded-full transition-colors">
+                            Inscrever-se
+                        </button>
+                    </div>
+                    <div class="mt-4">
+                        <h4 class="text-lg font-semibold mb-2">Formas de Pagamento</h4>
+                        <div class="flex gap-2">
+                            <i class="fa-brands fa-cc-paypal text-2xl"></i>
+                            <i class="fa-brands fa-cc-visa text-2xl"></i>
+                            <i class="fa-brands fa-cc-mastercard text-2xl"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Copyright -->
+            <div class="border-t border-white/20 mt-8 pt-8 text-center">
+                <p>© Copyright 2025 por Supermercado Orgânico™</p>
+            </div>
+        </div>
     </footer>
 </body>
 </html>
