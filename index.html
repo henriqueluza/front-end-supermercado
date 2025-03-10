@@ -4,23 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Organic Supermarket</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/447127b9bf.js" crossorigin="anonymous"></script>
-    <style>
-        .hover-underline::after {
-            content: '';
-            display: block;
-            width: 0;
-            height: 2px;
-            background: green;
-            transition: width 0.3s ease-in-out;
-            margin: auto;
-        }
-        .hover-underline:hover::after {
-            width: 100%;
-        }
-    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://kit.fontawesome.com/447127b9bf.js" crossorigin="anonymous"></script> 
 </head>
 <body class="bg-gray-100 font-[Poppins]">
     <!-- Navbar -->
@@ -45,6 +32,49 @@
         <h1 class="text-4xl font-bold text-white">Natural 100% Organic</h1>
         <p class="text-white mt-2">50% discount on bottled apple juice this week</p>
         <button class="mt-4 bg-green-600 text-white px-6 py-2 rounded-full">View Details</button>
+    </section>
+
+    <!-- Destaques Section -->
+    <section class="py-16 px-6">
+        <div class="grid grid-cols-3 gap-6 max-w-6xl mx-auto">
+            <!-- Orange Juice Card -->
+            <div class="bg-white col-span-2 p-8 rounded-lg flex relative overflow-hidden">
+                <div class="curved-background">
+                    <svg viewBox="0 0 1000 400" preserveAspectRatio="none">
+                        <path d="M0,100 C300,300 700,0 1000,100 L1000,400 L0,400 Z"></path>
+                    </svg>
+                </div>
+                <div class="content-wrapper flex-1">
+                    <h3 class="text-2xl text-white font-semibold mb-2 [text-shadow:_2px_2px_2px_rgb(0_0_0_/_20%)]">Orange Juice</h3>
+                    <p class="text-white uppercase text-sm [text-shadow:_1px_1px_1px_rgb(0_0_0_/_20%)]">Melhor sabor</p>
+                    <p class="text-white uppercase text-sm [text-shadow:_1px_1px_1px_rgb(0_0_0_/_20%)]">que você nunca vai esquecer</p>
+                    <button class="bg-lime-500 text-white px-6 py-2 rounded-full mt-6 hover:bg-lime-600">Shop Now</button>
+                </div>
+                <div class="content-wrapper flex-1 relative">
+                    <img src="assets/Suco_de_Laranja.webp" alt="Green Lemon & Orange Juice" class="absolute bottom-0 right-0 w-full h-auto object-contain">
+                </div>
+            </div>
+            
+            <div class="space-y-6">
+                <!-- Castanha Card -->
+                <div class="bg-white p-6 rounded-lg flex justify-between items-center">
+                    <div>
+                        <h3 class="text-lg font-semibold">Até 15% off Fresh<br>Castanha de Caju</h3>
+                        <button class="bg-lime-500 text-white px-4 py-1 rounded-full mt-4 text-sm hover:bg-lime-600">Shop Now</button>
+                    </div>
+                    <img src="assets/Castanha-de-Caju.webp" alt="Castanha de Caju" class="w-1/2 h-auto object-contain">
+                </div>
+                
+                <!-- Suco de Manga Card -->
+                <div class="bg-white p-6 rounded-lg flex justify-between items-center">
+                    <div>
+                        <h3 class="text-lg font-semibold">50% off em<br>Suco de Manga</h3>
+                        <button class="bg-lime-500 text-white px-4 py-1 rounded-full mt-4 text-sm hover:bg-lime-600">Shop Now</button>
+                    </div>
+                    <img src="assets/Monster.webp" alt="Monster" class="w-1/2 h-auto object-contain">
+                </div>
+            </div>
+        </div>
     </section>
 
     <!-- Our Products Section -->
@@ -82,5 +112,8 @@
             </div>
         </div>
     </section>
+    <footer>
+        
+    </footer>
 </body>
 </html>

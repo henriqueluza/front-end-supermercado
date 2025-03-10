@@ -1,0 +1,34 @@
+.hover-underline::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: green;
+    transition: width 0.3s ease-in-out;
+    margin: auto;
+}
+.hover-underline:hover::after {
+    width: 100%;
+}
+.curved-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    overflow: hidden;
+}
+.curved-background svg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform: rotate(180deg) translateY(20%);
+}
+.curved-background path {
+    fill: #e6800cf3;
+}
+.content-wrapper {
+    position: relative;
+    z-index: 1;
+}
