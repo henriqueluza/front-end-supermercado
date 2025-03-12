@@ -47,6 +47,11 @@ npm run dev
 ├── js/                    # Pasta para scripts específicos (vazia por enquanto)
 │
 ├── pages/                 # Pasta para armazenar os arquivos HTML das páginas secundárias
+│   ├── shop.html          # Página de produtos
+│   ├── contato.html       # Página de contato
+│   ├── sobre.html         # Página "Sobre nós" 
+│   ├── perfil.html        # Página de login
+│   ├── carrinho.html      # Página de carrinho                 
 │
 └── README.md              # Informações sobre o projeto
 
