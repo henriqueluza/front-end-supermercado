@@ -1,460 +1,481 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Organic Supermarket</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://kit.fontawesome.com/447127b9bf.js" crossorigin="anonymous"></script> 
-</head>
-<body class="bg-gray-100 font-[Poppins]">
+    <script
+      src="https://kit.fontawesome.com/447127b9bf.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body class="bg-gray-100 font-[Poppins]">
     <!-- Navbar -->
-    <nav class="bg-white shadow-md py-4 px-6 flex justify-between items-center">
-        <div class="text-green-600 text-2xl font-bold"><a href="index.html">Supermarket🌿</a></div>
-        <ul class="flex space-x-6 text-gray-700 text-lg">
-            <li class="font-semibold border-b-2 border-green-500 hover-underline">Home</li>
-            <li class="hover:text-green-500 cursor-pointer hover-underline">Shop</li>
-            <li class="hover:text-green-500 cursor-pointer hover-underline">Page</li>
-            <li class="hover:text-green-500 cursor-pointer hover-underline">About</li>
-            <li class="hover:text-green-500 cursor-pointer hover-underline">Contact</li>
-        </ul>
-        <div class="flex space-x-4 text-xl">
-            <span class="cursor-pointer"><i class="fa-solid fa-magnifying-glass text-gray-700 hover:text-green-500  cursor-pointer hover-underline"></i></span>
-            <span class="cursor-pointer"><i class="fa-solid fa-cart-shopping text-gray-700  hover:text-green-500  cursor-pointer hover-underline"></i></span>
-            <span class="cursor-pointer"><i class="fa-solid fa-user text-gray-700  hover:text-green-500  cursor-pointer hover-underline"></i></span>
+    <nav class="bg-white shadow-md py-4 px-6 flex justify-between items-center relative">
+      <div class="text-green-600 text-2xl font-bold">
+        <a href="index.html">Supermercado🌿</a>
+      </div>
+      <ul class="flex space-x-6 text-gray-700 text-lg">
+        <li class="font-semibold border-b-2 border-green-500 hover-underline">
+          <a href="index.html">Home</a>
+        </li>
+        <li class="hover:text-green-500 cursor-pointer hover-underline">
+          <a href="./pages/shop.html">Shop</a>
+        </li>
+        <li class="hover:text-green-500 cursor-pointer hover-underline">
+          <a href="./pages/sobre.html">Sobre</a>
+        </li>
+        <li class="hover:text-green-500 cursor-pointer hover-underline">
+          <a href="./pages/contato.html">Contato</a>
+        </li>
+      </ul>
+      <div class="flex items-center space-x-4">
+        <!-- Search Bar -->
+        <div class="flex items-center rounded-full overflow-hidden bg-white border border-gray-300">
+          <input type="text" placeholder="Pesquisar produtos" class="px-4 py-2 w-48 focus:outline-none text-sm text-gray-500">
+          <button class="px-3">
+            <i class="fa-solid fa-magnifying-glass text-gray-700 hover:text-green-500 cursor-pointer"></i>
+          </button>
         </div>
+        <!-- Icons -->
+        <div class="flex space-x-4 text-xl">
+          <span class="cursor-pointer">
+            <a href="./pages/carrinho.html">
+              <i class="fa-solid fa-cart-shopping text-gray-700 hover:text-green-500 cursor-pointer hover-underline"></i>
+            </a>
+          </span>
+          <span class="cursor-pointer">
+            <a href="./pages/perfil.html">
+              <i class="fa-solid fa-user text-gray-700 hover:text-green-500 cursor-pointer hover-underline"></i>
+            </a>
+          </span>
+        </div>
+      </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="bg-white h-[80vh] flex flex-col justify-center items-center text-center relative overflow-hidden">
+    <main>
+      <!-- Hero Section -->
+      <section
+        class="bg-white h-[80vh] flex flex-col justify-center items-center text-center relative overflow-hidden"
+      >
         <!-- Slides Container -->
         <div id="heroSlides" class="w-full h-full relative">
-            <!-- Slide 1 -->
-            <div class="hero-slide active absolute w-full h-full flex justify-between items-center px-20 overflow-hidden">
-                <!-- Background SVG -->
-                <div class="absolute inset-0 z-0">
-                    <svg viewBox="0 0 1000 1000" preserveAspectRatio="none" class="w-full h-full">
-                        <path d="M0,200 C300,400 700,100 1000,300 L1000,1000 L0,1000 Z" class="fill-lime-500"></path>
-                        <path d="M0,400 C300,600 700,300 1000,500 L1000,1000 L0,1000 Z" class="fill-lime-500/5"></path>
-                    </svg>
-                </div>
-                <div class="text-left max-w-lg z-10">
-                    <p class="text-green-600 text-sm font-semibold mb-2">Produtos Orgânicos da Melhor Qualidade</p>
-                    <h1 class="text-5xl font-bold text-gray-800 mb-4">Gostosos e Saudáveis<br>Comida Orgânica</h1>
-                    <button class="mt-4 bg-green-600 text-white px-8 py-3 rounded hover:bg-green-700">Shop Now</button>
-                </div>
-                <div class="flex-1 relative h-full z-10">
-                    <img src="assets/Brocoli.webp" alt="Vegetais Orgânicos" class="absolute right-0 -bottom-5 w-[575px] h-auto object-contain transform scale-125">
-                </div>
+          <!-- Slide 1 -->
+          <div
+            class="hero-slide active absolute w-full h-full flex justify-between items-center px-20 overflow-hidden"
+          >
+            <!-- Background SVG -->
+            <div class="absolute inset-0 z-0">
+              <svg
+                viewBox="0 0 1000 1000"
+                preserveAspectRatio="none"
+                class="w-full h-full"
+              >
+                <path
+                  d="M0,200 C300,400 700,100 1000,300 L1000,1000 L0,1000 Z"
+                  class="fill-lime-500"
+                ></path>
+                <path
+                  d="M0,400 C300,600 700,300 1000,500 L1000,1000 L0,1000 Z"
+                  class="fill-lime-500/5"
+                ></path>
+              </svg>
             </div>
-            
-            <!-- Slide 2 -->
-            <div class="hero-slide absolute w-full h-full flex justify-between items-center px-20 overflow-hidden opacity-0">
-                <!-- Background SVG -->
-                <div class="absolute inset-0 z-0">
-                    <svg viewBox="0 0 1000 1000" preserveAspectRatio="none" class="w-full h-full">
-                        <path d="M0,200 C300,400 700,100 1000,300 L1000,1000 L0,1000 Z" class="fill-lime-500"></path>
-                        <path d="M0,400 C300,600 700,300 1000,500 L1000,1000 L0,1000 Z" class="fill-lime-500/5"></path>
-                    </svg>
-                </div>
-                <div class="text-left max-w-lg z-10">
-                    <p class="text-green-600 text-sm font-semibold mb-2">Frutas Frescas da Estação</p>
-                    <h1 class="text-5xl font-bold text-gray-800 mb-4">Frutas Frescas<br>& Saudáveis</h1>
-                    <button class="mt-4 bg-green-600 text-white px-8 py-3 rounded hover:bg-green-700">Ver Ofertas</button>
-                </div>
-                <div class="flex-1 relative h-full z-10">
-                    <img src="assets/Frutas.webp" alt="Frutas Frescas" class="absolute right-0 -bottom-5 w-[675px] h-auto object-contain transform scale-125">
-                </div>
+            <div class="text-left max-w-lg z-10">
+              <p class="text-green-600 text-sm font-semibold mb-2">
+                Produtos Orgânicos da Melhor Qualidade
+              </p>
+              <h1 class="text-5xl font-bold text-gray-800 mb-4">
+                Gostosos e Saudáveis<br />Comida Orgânica
+              </h1>
+              <button
+                class="mt-4 bg-green-600 text-white px-8 py-3 rounded hover:bg-green-700"
+              >
+                Shop Now
+              </button>
             </div>
-            
-            <!-- Slide 3 -->
-            <div class="hero-slide absolute w-full h-full flex justify-between items-center px-20 overflow-hidden opacity-0">
-                <!-- Background SVG -->
-                <div class="absolute inset-0 z-0">
-                    <svg viewBox="0 0 1000 1000" preserveAspectRatio="none" class="w-full h-full">
-                        <path d="M0,200 C300,400 700,100 1000,300 L1000,1000 L0,1000 Z" class="fill-lime-500"></path>
-                        <path d="M0,400 C300,600 700,300 1000,500 L1000,1000 L0,1000 Z" class="fill-lime-500/5"></path>
-                    </svg>
-                </div>
-                <div class="text-left max-w-lg z-10">
-                    <p class="text-green-600 text-sm font-semibold mb-2">Salada e Legumes Selecionados</p>
-                    <h1 class="text-5xl font-bold text-gray-800 mb-4">Salada<br>& Legumes Orgânicos</h1>
-                    <button class="mt-4 bg-green-600 text-white px-8 py-3 rounded hover:bg-green-700">Explorar</button>
-                </div>
-                <div class="flex-1 relative h-full z-10">
-                    <img src="assets/Salada.webp" alt="Diversos Legumes e Saladas" class="absolute right-0 w-[700px] h-auto object-contain transform scale-125">
-                </div>
+            <div class="flex-1 relative h-full z-10">
+              <img
+                src="assets/Brocoli.webp"
+                alt="Vegetais Orgânicos"
+                class="absolute right-0 -bottom-5 w-[575px] h-auto object-contain transform scale-125"
+              />
             </div>
+          </div>
+
+          <!-- Slide 2 -->
+          <div
+            class="hero-slide absolute w-full h-full flex justify-between items-center px-20 overflow-hidden opacity-0"
+          >
+            <!-- Background SVG -->
+            <div class="absolute inset-0 z-0">
+              <svg
+                viewBox="0 0 1000 1000"
+                preserveAspectRatio="none"
+                class="w-full h-full"
+              >
+                <path
+                  d="M0,200 C300,400 700,100 1000,300 L1000,1000 L0,1000 Z"
+                  class="fill-lime-500"
+                ></path>
+                <path
+                  d="M0,400 C300,600 700,300 1000,500 L1000,1000 L0,1000 Z"
+                  class="fill-lime-500/5"
+                ></path>
+              </svg>
+            </div>
+            <div class="text-left max-w-lg z-10">
+              <p class="text-green-600 text-sm font-semibold mb-2">
+                Frutas Frescas da Estação
+              </p>
+              <h1 class="text-5xl font-bold text-gray-800 mb-4">
+                Frutas Frescas<br />& Saudáveis
+              </h1>
+              <button
+                class="mt-4 bg-green-600 text-white px-8 py-3 rounded hover:bg-green-700"
+              >
+                Ver Ofertas
+              </button>
+            </div>
+            <div class="flex-1 relative h-full z-10">
+              <img
+                src="assets/Frutas.webp"
+                alt="Frutas Frescas"
+                class="absolute right-0 -bottom-5 w-[675px] h-auto object-contain transform scale-125"
+              />
+            </div>
+          </div>
+
+          <!-- Slide 3 -->
+          <div
+            class="hero-slide absolute w-full h-full flex justify-between items-center px-20 overflow-hidden opacity-0"
+          >
+            <!-- Background SVG -->
+            <div class="absolute inset-0 z-0">
+              <svg
+                viewBox="0 0 1000 1000"
+                preserveAspectRatio="none"
+                class="w-full h-full"
+              >
+                <path
+                  d="M0,200 C300,400 700,100 1000,300 L1000,1000 L0,1000 Z"
+                  class="fill-lime-500"
+                ></path>
+                <path
+                  d="M0,400 C300,600 700,300 1000,500 L1000,1000 L0,1000 Z"
+                  class="fill-lime-500/5"
+                ></path>
+              </svg>
+            </div>
+            <div class="text-left max-w-lg z-10">
+              <p class="text-green-600 text-sm font-semibold mb-2">
+                Salada e Legumes Selecionados
+              </p>
+              <h1 class="text-5xl font-bold text-gray-800 mb-4">
+                Salada<br />& Legumes Orgânicos
+              </h1>
+              <button
+                class="mt-4 bg-green-600 text-white px-8 py-3 rounded hover:bg-green-700"
+              >
+                Explorar
+              </button>
+            </div>
+            <div class="flex-1 relative h-full z-10">
+              <img
+                src="assets/Salada.webp"
+                alt="Diversos Legumes e Saladas"
+                class="absolute right-0 w-[700px] h-auto object-contain transform scale-125"
+              />
+            </div>
+          </div>
         </div>
 
         <!-- Navigation Buttons -->
-        <button id="prevHeroBtn" class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/80 text-gray-700 rounded-full w-10 h-10 flex items-center justify-center hover:bg-white transition-colors z-20">
-            <i class="fa-solid fa-chevron-left"></i>
+        <button
+          id="prevHeroBtn"
+          class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/80 text-gray-700 rounded-full w-10 h-10 flex items-center justify-center hover:bg-white transition-colors z-20"
+        >
+          <i class="fa-solid fa-chevron-left"></i>
         </button>
-        <button id="nextHeroBtn" class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/80 text-gray-700 rounded-full w-10 h-10 flex items-center justify-center hover:bg-white transition-colors z-20">
-            <i class="fa-solid fa-chevron-right"></i>
+        <button
+          id="nextHeroBtn"
+          class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/80 text-gray-700 rounded-full w-10 h-10 flex items-center justify-center hover:bg-white transition-colors z-20"
+        >
+          <i class="fa-solid fa-chevron-right"></i>
         </button>
 
         <!-- Dots Navigation -->
-        <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2 z-20">
-            <button class="hero-dot w-3 h-3 rounded-full bg-white/50 hover:bg-white transition-colors"></button>
-            <button class="hero-dot w-3 h-3 rounded-full bg-white/50 hover:bg-white transition-colors"></button>
-            <button class="hero-dot w-3 h-3 rounded-full bg-white/50 hover:bg-white transition-colors"></button>
+        <div
+          class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2 z-20"
+        >
+          <button
+            class="hero-dot w-3 h-3 rounded-full bg-white/50 hover:bg-white transition-colors"
+          ></button>
+          <button
+            class="hero-dot w-3 h-3 rounded-full bg-white/50 hover:bg-white transition-colors"
+          ></button>
+          <button
+            class="hero-dot w-3 h-3 rounded-full bg-white/50 hover:bg-white transition-colors"
+          ></button>
         </div>
-    </section>
+      </section>
 
-    <!-- Destaques Section -->
-    <section class="py-16 px-6">
+      <!-- Destaques Section -->
+      <section class="py-16 px-6">
         <div class="grid grid-cols-3 gap-6 max-w-6xl mx-auto">
-            <!-- Orange Juice Card -->
-            <div class="bg-white col-span-2 p-8 rounded-lg flex relative overflow-hidden">
-                <div class="curved-background">
-                    <svg viewBox="0 0 1000 400" preserveAspectRatio="none">
-                        <path d="M0,100 C300,300 700,0 1000,100 L1000,400 L0,400 Z"></path>
-                    </svg>
-                </div>
-                <div class="content-wrapper flex-1">
-                    <h3 class="text-2xl text-white font-semibold mb-2 [text-shadow:_2px_2px_2px_rgb(0_0_0_/_20%)]">Orange Juice</h3>
-                    <p class="text-white uppercase text-sm [text-shadow:_1px_1px_1px_rgb(0_0_0_/_20%)]">Melhor sabor</p>
-                    <p class="text-white uppercase text-sm [text-shadow:_1px_1px_1px_rgb(0_0_0_/_20%)]">que você nunca vai esquecer</p>
-                    <button class="bg-lime-500 text-white px-6 py-2 rounded-full mt-6 hover:bg-lime-600">Shop Now</button>
-                </div>
-                <div class="content-wrapper flex-1 relative">
-                    <img src="assets/Suco_de_Laranja.webp" alt="Green Lemon & Orange Juice" class="absolute bottom-0 right-0 w-full h-auto object-contain">
-                </div>
+          <!-- Orange Juice Card -->
+          <div
+            class="bg-white col-span-2 p-8 rounded-lg flex relative overflow-hidden"
+          >
+            <div class="curved-background">
+              <svg viewBox="0 0 1000 400" preserveAspectRatio="none">
+                <path
+                  d="M0,100 C300,300 700,0 1000,100 L1000,400 L0,400 Z"
+                ></path>
+              </svg>
             </div>
-            
-            <div class="space-y-6">
-                <!-- Castanha Card -->
-                <div class="bg-white p-6 rounded-lg flex justify-between items-center">
-                    <div>
-                        <h3 class="text-lg font-semibold">Até 15% off Fresh<br>Castanha de Caju</h3>
-                        <button class="bg-lime-500 text-white px-4 py-1 rounded-full mt-4 text-sm hover:bg-lime-600">Shop Now</button>
-                    </div>
-                    <img src="assets/Castanha-de-Caju.webp" alt="Castanha de Caju" class="w-1/2 h-auto object-contain">
-                </div>
-                
-                <!-- Suco de Manga Card -->
-                <div class="bg-white p-6 rounded-lg flex justify-between items-center">
-                    <div>
-                        <h3 class="text-lg font-semibold">50% off em<br>Suco de Manga</h3>
-                        <button class="bg-lime-500 text-white px-4 py-1 rounded-full mt-4 text-sm hover:bg-lime-600">Shop Now</button>
-                    </div>
-                    <img src="assets/Monster.webp" alt="Monster" class="w-1/2 h-auto object-contain">
-                </div>
+            <div class="content-wrapper flex-1">
+              <h3
+                class="text-2xl text-white font-semibold mb-2 [text-shadow:_2px_2px_2px_rgb(0_0_0_/_20%)]"
+              >
+                Suco de Laranja
+              </h3>
+              <p
+                class="text-white uppercase text-sm [text-shadow:_1px_1px_1px_rgb(0_0_0_/_20%)]"
+              >
+                Melhor sabor
+              </p>
+              <p
+                class="text-white uppercase text-sm [text-shadow:_1px_1px_1px_rgb(0_0_0_/_20%)]"
+              >
+                que você nunca vai esquecer
+              </p>
+              <button
+                class="bg-lime-500 text-white px-6 py-2 rounded-full mt-6 hover:bg-lime-600"
+              >
+                Shop Now
+              </button>
             </div>
-        </div>
-    </section>
+            <div class="content-wrapper flex-1 relative">
+              <img
+                src="assets/Suco_de_Laranja.webp"
+                alt="Green Lemon & Orange Juice"
+                class="absolute bottom-0 right-0 w-full h-auto object-contain"
+              />
+            </div>
+          </div>
 
-    <!-- Our Products Section -->
-    <section class="py-6 px-6 relative">
-        <h2 class="text-3xl font-bold text-center">Our Products</h2>
+          <div class="space-y-6">
+            <!-- Castanha Card -->
+            <div
+              class="bg-white p-6 rounded-lg flex justify-between items-center"
+            >
+              <div>
+                <h3 class="text-lg font-semibold">
+                  Até 15% off Fresh<br />Castanha de Caju
+                </h3>
+                <button
+                  class="bg-lime-500 text-white px-4 py-1 rounded-full mt-4 text-sm hover:bg-lime-600"
+                >
+                  Shop Now
+                </button>
+              </div>
+              <img
+                src="assets/Castanha-de-Caju.webp"
+                alt="Castanha de Caju"
+                class="w-1/2 h-auto object-contain"
+              />
+            </div>
+
+            <!-- Suco de Manga Card -->
+            <div
+              class="bg-white p-6 rounded-lg flex justify-between items-center"
+            >
+              <div>
+                <h3 class="text-lg font-semibold">
+                  50% off em<br />Energéticos Monster
+                </h3>
+                <button
+                  class="bg-lime-500 text-white px-4 py-1 rounded-full mt-4 text-sm hover:bg-lime-600"
+                >
+                  Shop Now
+                </button>
+              </div>
+              <img
+                src="assets/Monster.webp"
+                alt="Monster"
+                class="w-1/2 h-auto object-contain"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Our Products Section -->
+      <section class="py-6 px-6 relative">
+        <h2 class="text-3xl font-bold text-center">Nossos Produtos</h2>
         <div class="flex justify-center space-x-6 mt-6 border-b-2 pb-4">
-            <p class="text-green-600 font-semibold border-b-2 border-green-600 cursor-pointer">Food & Drinks</p>
-            <p class="hover:text-green-500 cursor-pointer hover-underline">Bread & Cake</p>
-            <p class="hover:text-green-500 cursor-pointer hover-underline">Dried Foods</p>
-            <p class="hover:text-green-500 cursor-pointer hover-underline">Fish & Meat</p>
-            <p class="hover:text-green-500 cursor-pointer hover-underline">Vegetables</p>
+          <p
+            class="text-green-600 font-semibold border-b-2 border-green-600 cursor-pointer"
+          >
+            Vegetais e Frutas
+          </p>
+          <p class="hover:text-green-500 cursor-pointer hover-underline">
+            Padaria
+          </p>
+          <p class="hover:text-green-500 cursor-pointer hover-underline">
+            Carnes
+          </p>
+          <p class="hover:text-green-500 cursor-pointer hover-underline">
+            Comidas e Bebidas
+          </p>
         </div>
 
         <!-- Navigation Arrows -->
-        <button id="prevBtn" class="absolute left-2 top-1/2 transform -translate-y-1/2 bg-lime-500 text-white rounded-full w-10 h-10 flex items-center justify-center shadow-lg hover:bg-lime-600 transition-colors hidden">
-            <i class="fa-solid fa-chevron-left"></i>
+        <button
+          id="prevBtn"
+          class="absolute left-2 top-1/2 transform -translate-y-1/2 bg-lime-500 text-white rounded-full w-10 h-10 flex items-center justify-center shadow-lg hover:bg-lime-600 transition-colors hidden"
+        >
+          <i class="fa-solid fa-chevron-left"></i>
         </button>
-        <button id="nextBtn" class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-lime-500 text-white rounded-full w-10 h-10 flex items-center justify-center shadow-lg hover:bg-lime-600 transition-colors">
-            <i class="fa-solid fa-chevron-right"></i>
+        <button
+          id="nextBtn"
+          class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-lime-500 text-white rounded-full w-10 h-10 flex items-center justify-center shadow-lg hover:bg-lime-600 transition-colors"
+        >
+          <i class="fa-solid fa-chevron-right"></i>
         </button>
         <!-- Shop Button (Initially Hidden) -->
-        <a href="#" id="shopBtnContainer" class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-lime-500 text-white px-4 py-2 rounded-md hover:bg-lime-600 transition-colors text-sm font-medium hidden">
-            Shop
+        <a
+          href="#"
+          id="shopBtnContainer"
+          class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-lime-500 text-white px-4 py-2 rounded-md hover:bg-lime-600 transition-colors text-sm font-medium hidden"
+        >
+          Shop
         </a>
 
         <div class="overflow-hidden mt-8">
-            <div id="productsContainer" class="grid grid-cols-4 gap-6 max-w-6xl mx-auto">
-                <!-- Original Products -->
-                <div class="bg-white p-4 shadow-md text-center product-card">
-                    <img src="assets/Mango.webp" alt="Manga" class="mx-auto">
-                    <p class="font-semibold">Manga</p>
-                    <p class="text-green-500">R$8.00</p>
-                </div>
-                <div class="bg-white p-4 shadow-md text-center product-card">
-                    <img src="assets/Berries.webp" alt="Berries" class="mx-auto">
-                    <p class="font-semibold">Frutas Silvestres</p>
-                    <p class="text-green-500">R$7.00 <span class="line-through text-gray-400">$8.50</span></p>
-                </div>
-                <div class="bg-white p-4 shadow-md text-center product-card">
-                    <img src="assets/Oranges.webp" alt="Oranges" class="mx-auto">
-                    <p class="font-semibold">Laranja Bahia</p>
-                    <p class="text-green-500">R$3.90 <span class="line-through text-gray-400">$6.00</span></p>
-                </div>
-                <div class="bg-white p-4 shadow-md text-center product-card">
-                    <img src="assets/Brocoli.webp" alt="Broccoli" class="mx-auto">
-                    <p class="font-semibold">Brócolis Japonês</p>
-                    <p class="text-green-500">R$3.00</p>
-                </div>
+          <div
+            id="productsContainer"
+            class="grid grid-cols-4 gap-6 max-w-6xl mx-auto"
+          >
+            <!-- Original Products -->
+            <div class="bg-white p-4 shadow-md text-center product-card">
+              <img src="assets/Mango.webp" alt="Manga" class="mx-auto" />
+              <p class="font-semibold">Manga</p>
+              <p class="text-green-500">R$8.00</p>
             </div>
+            <div class="bg-white p-4 shadow-md text-center product-card">
+              <img src="assets/Berries.webp" alt="Berries" class="mx-auto" />
+              <p class="font-semibold">Frutas Silvestres</p>
+              <p class="text-green-500">
+                R$7.00 <span class="line-through text-gray-400">$8.50</span>
+              </p>
+            </div>
+            <div class="bg-white p-4 shadow-md text-center product-card">
+              <img src="assets/Oranges.webp" alt="Oranges" class="mx-auto" />
+              <p class="font-semibold">Laranja Bahia</p>
+              <p class="text-green-500">
+                R$3.90 <span class="line-through text-gray-400">$6.00</span>
+              </p>
+            </div>
+            <div class="bg-white p-4 shadow-md text-center product-card">
+              <img src="assets/Brocoli.webp" alt="Broccoli" class="mx-auto" />
+              <p class="font-semibold">Brócolis Japonês</p>
+              <p class="text-green-500">R$3.00</p>
+            </div>
+          </div>
         </div>
-    </section>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const productsContainer = document.getElementById('productsContainer');
-            const prevBtn = document.getElementById('prevBtn');
-            const nextBtn = document.getElementById('nextBtn');
-            const shopBtnContainer = document.getElementById('shopBtnContainer');
-            
-            // Array com todos os produtos
-            const allProducts = [
-                // Produtos iniciais (0-3)
-                {
-                    img: "assets/Mango.webp",
-                    name: "Manga",
-                    price: "R$8.00"
-                },
-                {
-                    img: "assets/Berries.webp",
-                    name: "Frutas Silvestres",
-                    price: "R$7.00",
-                    oldPrice: "$8.50"
-                },
-                {
-                    img: "assets/Oranges.webp",
-                    name: "Laranja Bahia",
-                    price: "R$3.90",
-                    oldPrice: "$6.00"
-                },
-                {
-                    img: "assets/Brocoli.webp",
-                    name: "Brócolis Japonês",
-                    price: "R$3.00"
-                },
-                // Produtos adicionais (4-6)
-                {
-                    img: "assets/Abacate.webp",
-                    name: "Abacate",
-                    price: "R$5.50"
-                },
-                {
-                    img: "assets/Maçã.webp",
-                    name: "Maçã Fuji",
-                    price: "R$4.20",
-                    oldPrice: "$5.00"
-                },
-                {
-                    img: "assets/Pera.webp",
-                    name: "Pêra Williams",
-                    price: "R$6.90"
-                }
-            ];
-            
-            let currentStartIndex = 0;
-            const totalProducts = allProducts.length;
-            
-            function createProductCard(product) {
-                return `
-                    <div class="bg-white p-4 shadow-md text-center product-card">
-                        <img src="${product.img}" alt="${product.name}" class="mx-auto">
-                        <p class="font-semibold">${product.name}</p>
-                        <p class="text-green-500">${product.price} ${product.oldPrice ? `<span class="line-through text-gray-400">${product.oldPrice}</span>` : ''}</p>
-                    </div>
-                `;
-            }
-            
-            function updateProducts() {
-                const currentProducts = allProducts.slice(currentStartIndex, currentStartIndex + 4);
-                productsContainer.innerHTML = currentProducts.map(product => createProductCard(product)).join('');
-            }
-            
-            function updateNavigation() {
-                prevBtn.classList.toggle('hidden', currentStartIndex === 0);
-                nextBtn.classList.toggle('hidden', currentStartIndex >= totalProducts - 4);
-                
-                if (currentStartIndex === totalProducts - 4) {
-                    shopBtnContainer.classList.remove('hidden');
-                } else {
-                    shopBtnContainer.classList.add('hidden');
-                }
-            }
-            
-            nextBtn.addEventListener('click', () => {
-                if (currentStartIndex < totalProducts - 4) {
-                    currentStartIndex++;
-                    updateProducts();
-                    updateNavigation();
-                }
-            });
-            
-            prevBtn.addEventListener('click', () => {
-                if (currentStartIndex > 0) {
-                    currentStartIndex--;
-                    updateProducts();
-                    updateNavigation();
-                }
-            });
-            
-            // Inicializar estado dos botões
-            updateNavigation();
-        });
-
-        // Hero Slider Functionality
-        const slides = document.querySelectorAll('.hero-slide');
-        const dots = document.querySelectorAll('.hero-dot');
-        const prevBtn = document.getElementById('prevHeroBtn');
-        const nextBtn = document.getElementById('nextHeroBtn');
-        let currentSlide = 0;
-
-        function showSlide(index) {
-            console.log('Showing slide:', index); // Debug log
-            slides.forEach(slide => {
-                slide.classList.remove('active');
-            });
-            
-            dots.forEach(dot => {
-                dot.classList.remove('bg-white');
-                dot.classList.add('bg-white/50');
-            });
-
-            slides[index].classList.add('active');
-            dots[index].classList.remove('bg-white/50');
-            dots[index].classList.add('bg-white');
-        }
-
-        function nextSlide() {
-            console.log('Next slide clicked'); // Debug log
-            currentSlide = (currentSlide + 1) % slides.length;
-            showSlide(currentSlide);
-        }
-
-        function prevSlide() {
-            console.log('Prev slide clicked'); // Debug log
-            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-            showSlide(currentSlide);
-        }
-
-        // Event Listeners
-        document.addEventListener('DOMContentLoaded', function() {
-            // Products Slider
-            const productsContainer = document.getElementById('productsContainer');
-            const prevBtn = document.getElementById('prevBtn');
-            const nextBtn = document.getElementById('nextBtn');
-            const shopBtnContainer = document.getElementById('shopBtnContainer');
-            
-            // ... rest of the products slider code ...
-        });
-
-        // Hero Slider Event Listeners
-        nextBtn.addEventListener('click', nextSlide);
-        prevBtn.addEventListener('click', prevSlide);
-
-        dots.forEach((dot, index) => {
-            dot.addEventListener('click', () => {
-                currentSlide = index;
-                showSlide(currentSlide);
-            });
-        });
-
-        // Auto slide every 5 seconds
-        setInterval(nextSlide, 5000);
-    </script>
-
-    <style>
-        #productsContainer {
-            position: relative;
-        }
-
-        .hero-slide {
-            opacity: 0;
-            transition: opacity 0.5s ease-in-out;
-            pointer-events: none;
-            position: absolute;
-            width: 100%;
-            height: 100%;
-        }
-
-        .hero-slide.active {
-            opacity: 1;
-            pointer-events: auto;
-            z-index: 1;
-        }
-
-        #prevHeroBtn, #nextHeroBtn {
-            z-index: 10;
-            pointer-events: auto;
-        }
-    </style>
+      </section>
+    </main>
 
     <footer>
-        <!-- Footer Section -->
-        <div class="bg-lime-500 text-white py-12">
-            <div class="max-w-7xl mx-auto px-4 grid grid-cols-12 gap-4">
-                <!-- User Area -->
-                <div class="col-span-2">
-                    <h3 class="text-xl font-semibold mb-4">Área do Usuário</h3>
-                    <ul class="space-y-2">
-                        <li><a href="#" class="hover:text-gray-200">Minha Conta</a></li>
-                        <li><a href="#" class="hover:text-gray-200">Meu Carrinho</a></li>
-                        <li><a href="#" class="hover:text-gray-200">Login</a></li>
-                        <li><a href="#" class="hover:text-gray-200">Checkout</a></li>
-                    </ul>
-                </div>
+      <!-- Footer Section -->
+      <div class="bg-lime-500 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 grid grid-cols-12 gap-4">
+          <!-- User Area -->
+          <div class="col-span-2">
+            <h3 class="text-xl font-semibold mb-4">Área do Usuário</h3>
+            <ul class="space-y-2">
+              <li><a href="#" class="hover:text-gray-200">Minha Conta</a></li>
+              <li><a href="#" class="hover:text-gray-200">Meu Carrinho</a></li>
+              <li><a href="#" class="hover:text-gray-200">Login</a></li>
+              <li><a href="#" class="hover:text-gray-200">Checkout</a></li>
+            </ul>
+          </div>
 
-                <!-- Shopping Guide -->
-                <div class="col-span-2">
-                    <h3 class="text-xl font-semibold mb-4">Guia de Compras</h3>
-                    <ul class="space-y-2">
-                        <li><a href="#" class="hover:text-gray-200">Pagamento</a></li>
-                        <li><a href="#" class="hover:text-gray-200">Envio</a></li>
-                        <li><a href="#" class="hover:text-gray-200">FAQ</a></li>
-                        <li><a href="#" class="hover:text-gray-200">Política de Devolução</a></li>
-                    </ul>
-                </div>
+          <!-- Shopping Guide -->
+          <div class="col-span-2">
+            <h3 class="text-xl font-semibold mb-4">Guia de Compras</h3>
+            <ul class="space-y-2">
+              <li><a href="#" class="hover:text-gray-200">Pagamento</a></li>
+              <li><a href="#" class="hover:text-gray-200">Envio</a></li>
+              <li><a href="#" class="hover:text-gray-200">FAQ</a></li>
+              <li>
+                <a href="#" class="hover:text-gray-200"
+                  >Política de Devolução</a
+                >
+              </li>
+            </ul>
+          </div>
 
-                <!-- Contact Details -->
-                <div class="col-span-3 ml-8">
-                    <h3 class="text-xl font-semibold mb-4">Contato</h3>
-                    <ul class="space-y-2">
-                        <li class="flex items-center gap-2">
-                            <i class="fa-solid fa-location-dot"></i>
-                            <span>Setor Comercial Sul, Brasília-DF, Brasil</span>
-                        </li>
-                        <li class="flex items-center gap-2">
-                            <i class="fa-solid fa-phone"></i>
-                            <span>(61) 1234-5678</span>
-                        </li>
-                        <li class="flex items-center gap-2">
-                            <i class="fa-solid fa-envelope"></i>
-                            <span>contato@supermercado.com</span>
-                        </li>
-                    </ul>
-                </div>
+          <!-- Contact Details -->
+          <div class="col-span-3 ml-8">
+            <h3 class="text-xl font-semibold mb-4">Contato</h3>
+            <ul class="space-y-2">
+              <li class="flex items-center gap-2">
+                <i class="fa-solid fa-location-dot"></i>
+                <span>Setor Comercial Sul, Brasília-DF, Brasil</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <i class="fa-solid fa-phone"></i>
+                <span>(61) 1234-5678</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <i class="fa-solid fa-envelope"></i>
+                <span>contato@supermercado.com</span>
+              </li>
+            </ul>
+          </div>
 
-                <!-- Newsletter -->
-                <div class="col-span-4 ml-12">
-                    <h3 class="text-xl font-semibold mb-4">Newsletter</h3>
-                    <div class="flex flex-col gap-4">
-                        <input type="email" placeholder="Seu e-mail" class="px-4 py-2 rounded-full text-gray-800">
-                        <button class="bg-green-600 hover:bg-green-700 px-6 py-2 rounded-full transition-colors">
-                            Inscrever-se
-                        </button>
-                    </div>
-                    <div class="mt-4">
-                        <h4 class="text-lg font-semibold mb-2">Formas de Pagamento</h4>
-                        <div class="flex gap-2">
-                            <i class="fa-brands fa-cc-paypal text-2xl"></i>
-                            <i class="fa-brands fa-cc-visa text-2xl"></i>
-                            <i class="fa-brands fa-cc-mastercard text-2xl"></i>
-                        </div>
-                    </div>
-                </div>
+          <!-- Newsletter -->
+          <div class="col-span-4 ml-12">
+            <h3 class="text-xl font-semibold mb-4">Newsletter</h3>
+            <div class="flex flex-col gap-4">
+              <input
+                type="email"
+                placeholder="Seu e-mail"
+                class="px-4 py-2 rounded-full text-gray-800"
+              />
+              <button
+                class="bg-green-600 hover:bg-green-700 px-6 py-2 rounded-full transition-colors"
+              >
+                Inscrever-se
+              </button>
             </div>
-
-            <!-- Copyright -->
-            <div class="border-t border-white/20 mt-8 pt-8 text-center">
-                <p>© Copyright 2025 por Supermercado Orgânico™</p>
+            <div class="mt-4">
+              <h4 class="text-lg font-semibold mb-2">Formas de Pagamento</h4>
+              <div class="flex gap-2">
+                <i class="fa-brands fa-cc-paypal text-2xl"></i>
+                <i class="fa-brands fa-cc-visa text-2xl"></i>
+                <i class="fa-brands fa-cc-mastercard text-2xl"></i>
+              </div>
             </div>
+          </div>
         </div>
+
+        <!-- Copyright -->
+        <div class="border-t border-white/20 mt-8 pt-8 text-center">
+          <p>© Copyright 2025 por Supermercado Orgânico™</p>
+        </div>
+      </div>
     </footer>
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>

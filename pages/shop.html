@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Organic Supermarket</title>
+    <link rel="stylesheet" href="../styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script
+      src="https://kit.fontawesome.com/447127b9bf.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body class="bg-gray-100 font-[Poppins]">
+    <nav class="bg-white shadow-md py-4 px-6 flex justify-between items-center">
+        <div class="text-green-600 text-2xl font-bold">
+          <a href="../index.html">Supermercado🌿</a>
+        </div>
+        <ul class="flex space-x-6 text-gray-700 text-lg">
+          <li class="hover:text-green-500 cursor-pointer hover-underline">
+            <a href="../index.html">Home</a>
+          </li>
+          <li class="font-semibold border-b-2 border-green-500 cursor-pointer">
+            <a href="shop.html">Shop</a>
+          </li>
+          <li class="hover:text-green-500 cursor-pointer hover-underline">
+            <a href="sobre.html">Sobre</a>
+          </li>
+          <li class="hover:text-green-500 cursor-pointer hover-underline">
+            <a href="contato.html">Contato</a>
+          </li>
+        </ul>
+        <div class="flex items-center space-x-4">
+          <!-- Search Bar -->
+          <div class="flex items-center rounded-full overflow-hidden bg-white border border-gray-300">
+            <input type="text" placeholder="Pesquisar produtos" class="px-4 py-2 w-48 focus:outline-none text-sm text-gray-500">
+            <button class="px-3">
+              <i class="fa-solid fa-magnifying-glass text-gray-700 hover:text-green-500 cursor-pointer"></i>
+            </button>
+          </div>
+          <!-- Icons -->
+          <div class="flex space-x-4 text-xl">
+            <span class="cursor-pointer">
+              <a href="carrinho.html">
+                <i class="fa-solid fa-cart-shopping text-gray-700 hover:text-green-500 cursor-pointer hover-underline"></i>
+              </a>
+            </span>
+            <span class="cursor-pointer">
+              <a href="perfil.html">
+                <i class="fa-solid fa-user text-gray-700 hover:text-green-500 cursor-pointer hover-underline"></i>
+              </a>
+            </span>
+          </div>
+        </div>
+      </nav>
+      <footer>
+        <!-- Footer Section -->
+        <div class="bg-lime-500 text-white py-12">
+          <div class="max-w-7xl mx-auto px-4 grid grid-cols-12 gap-4">
+            <!-- User Area -->
+            <div class="col-span-2">
+              <h3 class="text-xl font-semibold mb-4">Área do Usuário</h3>
+              <ul class="space-y-2">
+                <li><a href="#" class="hover:text-gray-200">Minha Conta</a></li>
+                <li><a href="#" class="hover:text-gray-200">Meu Carrinho</a></li>
+                <li><a href="#" class="hover:text-gray-200">Login</a></li>
+                <li><a href="#" class="hover:text-gray-200">Checkout</a></li>
+              </ul>
+            </div>
+  
+            <!-- Shopping Guide -->
+            <div class="col-span-2">
+              <h3 class="text-xl font-semibold mb-4">Guia de Compras</h3>
+              <ul class="space-y-2">
+                <li><a href="#" class="hover:text-gray-200">Pagamento</a></li>
+                <li><a href="#" class="hover:text-gray-200">Envio</a></li>
+                <li><a href="#" class="hover:text-gray-200">FAQ</a></li>
+                <li>
+                  <a href="#" class="hover:text-gray-200"
+                    >Política de Devolução</a
+                  >
+                </li>
+              </ul>
+            </div>
+  
+            <!-- Contact Details -->
+            <div class="col-span-3 ml-8">
+              <h3 class="text-xl font-semibold mb-4">Contato</h3>
+              <ul class="space-y-2">
+                <li class="flex items-center gap-2">
+                  <i class="fa-solid fa-location-dot"></i>
+                  <span>Setor Comercial Sul, Brasília-DF, Brasil</span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <i class="fa-solid fa-phone"></i>
+                  <span>(61) 1234-5678</span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <i class="fa-solid fa-envelope"></i>
+                  <span>contato@supermercado.com</span>
+                </li>
+              </ul>
+            </div>
+  
+            <!-- Newsletter -->
+            <div class="col-span-4 ml-12">
+              <h3 class="text-xl font-semibold mb-4">Newsletter</h3>
+              <div class="flex flex-col gap-4">
+                <input
+                  type="email"
+                  placeholder="Seu e-mail"
+                  class="px-4 py-2 rounded-full text-gray-800"
+                />
+                <button
+                  class="bg-green-600 hover:bg-green-700 px-6 py-2 rounded-full transition-colors"
+                >
+                  Inscrever-se
+                </button>
+              </div>
+              <div class="mt-4">
+                <h4 class="text-lg font-semibold mb-2">Formas de Pagamento</h4>
+                <div class="flex gap-2">
+                  <i class="fa-brands fa-cc-paypal text-2xl"></i>
+                  <i class="fa-brands fa-cc-visa text-2xl"></i>
+                  <i class="fa-brands fa-cc-mastercard text-2xl"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+  
+          <!-- Copyright -->
+          <div class="border-t border-white/20 mt-8 pt-8 text-center">
+            <p>© Copyright 2025 por Supermercado Orgânico™</p>
+          </div>
+        </div>
+      </footer>
+    </body>
