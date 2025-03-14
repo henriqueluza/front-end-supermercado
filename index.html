@@ -318,77 +318,103 @@
         </div>
       </section>
 
-      <!-- Our Products Section -->
-      <section class="py-6 px-6 relative">
-        <h2 class="text-3xl font-bold text-center">Nossos Produtos</h2>
-        <div class="flex justify-center space-x-6 mt-6 border-b-2 pb-4">
-          <p
-            class="text-green-600 font-semibold border-b-2 border-green-600 cursor-pointer"
-          >
-            Vegetais e Frutas
-          </p>
-          <p class="hover:text-green-500 cursor-pointer hover-underline">
-            Padaria
-          </p>
-          <p class="hover:text-green-500 cursor-pointer hover-underline">
-            Carnes
-          </p>
-          <p class="hover:text-green-500 cursor-pointer hover-underline">
-            Comidas e Bebidas
-          </p>
-        </div>
+      <!-- Seção Desconto do Dia -->
+      <section class="py-16 px-6 bg-white">
+        <div class="max-w-6xl mx-auto">
+          <h2 class="text-3xl font-bold text-center mb-2">Desconto do Dia</h2>
+          <p class="text-center text-gray-600 mb-8">Ofertas especiais por tempo limitado!</p>
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- Produto 1 -->
+            <div class="bg-white p-6 rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300">
+              <div class="relative">
+                <img src="assets/Mango.webp" alt="Manga" class="mx-auto mb-4" />
+                <div class="absolute top-0 right-0 bg-red-500 text-white px-3 py-1 rounded-full text-sm font-bold">
+                  -30%
+                </div>
+              </div>
+              <h3 class="font-semibold text-lg mb-2">Manga Palmer</h3>
+              <div class="flex justify-between items-center mb-4">
+                <div>
+                  <p class="text-green-500 font-bold text-xl">R$5.60</p>
+                  <p class="text-gray-400 line-through text-sm">R$8.00</p>
+                </div>
+                <div class="bg-yellow-100 px-2 py-1 rounded">
+                  <p class="text-yellow-800 text-sm">Termina em 12h</p>
+                </div>
+              </div>
+              <button class="w-full bg-green-500 text-white py-2 rounded-full hover:bg-green-600 transition-colors">
+                Adicionar ao Carrinho
+              </button>
+            </div>
 
-        <!-- Navigation Arrows -->
-        <button
-          id="prevBtn"
-          class="absolute left-2 top-1/2 transform -translate-y-1/2 bg-lime-500 text-white rounded-full w-10 h-10 flex items-center justify-center shadow-lg hover:bg-lime-600 transition-colors hidden"
-        >
-          <i class="fa-solid fa-chevron-left"></i>
-        </button>
-        <button
-          id="nextBtn"
-          class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-lime-500 text-white rounded-full w-10 h-10 flex items-center justify-center shadow-lg hover:bg-lime-600 transition-colors"
-        >
-          <i class="fa-solid fa-chevron-right"></i>
-        </button>
-        <!-- Shop Button (Initially Hidden) -->
-        <a
-          href="#"
-          id="shopBtnContainer"
-          class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-lime-500 text-white px-4 py-2 rounded-md hover:bg-lime-600 transition-colors text-sm font-medium hidden"
-        >
-          Shop
-        </a>
+            <!-- Produto 2 -->
+            <div class="bg-white p-6 rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300">
+              <div class="relative">
+                <img src="assets/Berries.webp" alt="Berries" class="mx-auto mb-4" />
+                <div class="absolute top-0 right-0 bg-red-500 text-white px-3 py-1 rounded-full text-sm font-bold">
+                  -40%
+                </div>
+              </div>
+              <h3 class="font-semibold text-lg mb-2">Mix de Berries</h3>
+              <div class="flex justify-between items-center mb-4">
+                <div>
+                  <p class="text-green-500 font-bold text-xl">R$4.20</p>
+                  <p class="text-gray-400 line-through text-sm">R$7.00</p>
+                </div>
+                <div class="bg-yellow-100 px-2 py-1 rounded">
+                  <p class="text-yellow-800 text-sm">Termina em 12h</p>
+                </div>
+              </div>
+              <button class="w-full bg-green-500 text-white py-2 rounded-full hover:bg-green-600 transition-colors">
+                Adicionar ao Carrinho
+              </button>
+            </div>
 
-        <div class="overflow-hidden mt-8">
-          <div
-            id="productsContainer"
-            class="grid grid-cols-4 gap-6 max-w-6xl mx-auto"
-          >
-            <!-- Original Products -->
-            <div class="bg-white p-4 shadow-md text-center product-card">
-              <img src="assets/Mango.webp" alt="Manga" class="mx-auto" />
-              <p class="font-semibold">Manga</p>
-              <p class="text-green-500">R$8.00</p>
+            <!-- Produto 3 -->
+            <div class="bg-white p-6 rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300">
+              <div class="relative">
+                <img src="assets/Oranges.webp" alt="Laranjas" class="mx-auto mb-4" />
+                <div class="absolute top-0 right-0 bg-red-500 text-white px-3 py-1 rounded-full text-sm font-bold">
+                  -35%
+                </div>
+              </div>
+              <h3 class="font-semibold text-lg mb-2">Laranja Bahia</h3>
+              <div class="flex justify-between items-center mb-4">
+                <div>
+                  <p class="text-green-500 font-bold text-xl">R$2.53</p>
+                  <p class="text-gray-400 line-through text-sm">R$3.90</p>
+                </div>
+                <div class="bg-yellow-100 px-2 py-1 rounded">
+                  <p class="text-yellow-800 text-sm">Termina em 12h</p>
+                </div>
+              </div>
+              <button class="w-full bg-green-500 text-white py-2 rounded-full hover:bg-green-600 transition-colors">
+                Adicionar ao Carrinho
+              </button>
             </div>
-            <div class="bg-white p-4 shadow-md text-center product-card">
-              <img src="assets/Berries.webp" alt="Berries" class="mx-auto" />
-              <p class="font-semibold">Frutas Silvestres</p>
-              <p class="text-green-500">
-                R$7.00 <span class="line-through text-gray-400">$8.50</span>
-              </p>
-            </div>
-            <div class="bg-white p-4 shadow-md text-center product-card">
-              <img src="assets/Oranges.webp" alt="Oranges" class="mx-auto" />
-              <p class="font-semibold">Laranja Bahia</p>
-              <p class="text-green-500">
-                R$3.90 <span class="line-through text-gray-400">$6.00</span>
-              </p>
-            </div>
-            <div class="bg-white p-4 shadow-md text-center product-card">
-              <img src="assets/Brocoli.webp" alt="Broccoli" class="mx-auto" />
-              <p class="font-semibold">Brócolis Japonês</p>
-              <p class="text-green-500">R$3.00</p>
+
+            <!-- Produto 4 -->
+            <div class="bg-white p-6 rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300">
+              <div class="relative">
+                <img src="assets/Brocoli.webp" alt="Brócolis" class="mx-auto mb-4" />
+                <div class="absolute top-0 right-0 bg-red-500 text-white px-3 py-1 rounded-full text-sm font-bold">
+                  -50%
+                </div>
+              </div>
+              <h3 class="font-semibold text-lg mb-2">Brócolis Japonês</h3>
+              <div class="flex justify-between items-center mb-4">
+                <div>
+                  <p class="text-green-500 font-bold text-xl">R$1.50</p>
+                  <p class="text-gray-400 line-through text-sm">R$3.00</p>
+                </div>
+                <div class="bg-yellow-100 px-2 py-1 rounded">
+                  <p class="text-yellow-800 text-sm">Termina em 12h</p>
+                </div>
+              </div>
+              <button class="w-full bg-green-500 text-white py-2 rounded-full hover:bg-green-600 transition-colors">
+                Adicionar ao Carrinho
+              </button>
             </div>
           </div>
         </div>
