@@ -1,193 +1,183 @@
 <!DOCTYPE html>
 <html lang="en">
-      <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Organic Supermarket</title>
-        <link rel="stylesheet" href="styles.css" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
-          rel="stylesheet"
-        />
-    
-        <script src="https://cdn.tailwindcss.com"></script>
-        <script
-          src="https://kit.fontawesome.com/447127b9bf.js"
-          crossorigin="anonymous"
-        ></script>
-        <script src="../js/cart.js"></script>
-      </head>
-      <body class="bg-gray-100 font-[Poppins]">
-        <!-- Navbar -->
-        <nav class="bg-white shadow-md py-4 px-6 flex justify-between items-center">
-          <div class="text-green-600 text-2xl font-bold">
-            <a href="../index.html">Supermercado🌿</a>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Perfil - Supermercado Orgânico</title>
+    <link rel="stylesheet" href="../styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script
+      src="https://kit.fontawesome.com/447127b9bf.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="../js/cart.js"></script>
+  </head>
+  <body class="bg-gray-100 font-[Poppins] min-h-screen flex flex-col">
+    <!-- Navbar Mobile-First -->
+    <nav class="bg-white shadow-md py-2 md:py-4 px-4 md:px-6 flex flex-col md:flex-row justify-between items-center relative">
+      <div class="text-green-600 text-xl md:text-2xl font-bold mb-4 md:mb-0">
+        <a href="../index.html">Supermercado🌿</a>
+      </div>
+      <ul class="flex flex-wrap justify-center space-x-3 md:space-x-6 text-gray-700 text-base md:text-lg mb-4 md:mb-0">
+        <li class="hover:text-green-500 cursor-pointer hover-underline">
+          <a href="../index.html">Home</a>
+        </li>
+        <li class="hover:text-green-500 cursor-pointer hover-underline">
+          <a href="shop.html">Shop</a>
+        </li>
+        <li class="hover:text-green-500 cursor-pointer hover-underline">
+          <a href="sobre.html">Sobre</a>
+        </li>
+        <li class="hover:text-green-500 cursor-pointer hover-underline">
+          <a href="contato.html">Contato</a>
+        </li>
+      </ul>
+      <div class="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-4 w-full md:w-auto">
+        <!-- Search Bar -->
+        <div class="flex items-center rounded-full overflow-hidden bg-white border border-gray-300 w-full md:w-48">
+          <input type="text" placeholder="Pesquisar produtos" class="px-4 py-2 w-full focus:outline-none text-sm text-gray-500">
+          <button class="px-3">
+            <i class="fa-solid fa-magnifying-glass text-gray-700 hover:text-green-500 cursor-pointer"></i>
+          </button>
+        </div>
+        <!-- Icons -->
+        <div class="flex space-x-4 text-xl">
+          <span class="cursor-pointer relative">
+            <a href="carrinho.html">
+              <i class="fa-solid fa-cart-shopping text-gray-700 hover:text-green-500 cursor-pointer hover-underline"></i>
+              <span id="cart-count" class="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center" style="display: none;">0</span>
+            </a>
+          </span>
+          <span class="cursor-pointer">
+            <a href="perfil.html">
+              <i class="fa-solid fa-user text-lime-500 cursor-pointer"></i>
+            </a>
+          </span>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Login Section -->
+    <div class="flex-grow flex items-center justify-center py-8 md:py-12 px-4 sm:px-6 lg:px-8">
+      <div class="w-full max-w-md bg-white rounded-lg shadow-lg p-6 md:p-8">
+        <div class="text-center mb-6 md:mb-8">
+          <h2 class="text-xl md:text-2xl font-bold text-gray-800 mb-2">Bem Vindo</h2>
+          <h3 class="text-base md:text-xl text-gray-700">Faça login para continuar</h3>
+        </div>
+
+        <form class="space-y-4 md:space-y-6">
+          <div>
+            <label for="username" class="block text-sm font-medium text-gray-700 mb-1.5">Username</label>
+            <input
+              type="text"
+              id="username"
+              name="username"
+              class="w-full px-3 md:px-4 py-2 text-sm md:text-base border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-lime-500 focus:border-transparent"
+              placeholder="Digite seu nome de usuário"
+            />
           </div>
-          <ul class="flex space-x-6 text-gray-700 text-lg">
-            <li class="hover:text-green-500 cursor-pointer hover-underline">
-              <a href="../index.html">Home</a>
-            </li>
-            <li class="hover:text-green-500 cursor-pointer hover-underline">
-              <a href="shop.html">Shop</a>
-            </li>
-            <li class="hover:text-green-500 cursor-pointer hover-underline">
-              <a href="sobre.html">Sobre</a>
-            </li>
-            <li class="hover:text-green-500 cursor-pointer hover-underline">
-              <a href="contato.html">Contato</a>
-            </li>
-          </ul>
-          <div class="flex items-center space-x-4">
-            <!-- Search Bar -->
-            <div class="flex items-center rounded-full overflow-hidden bg-white border border-gray-300">
-              <input type="text" placeholder="Pesquisar produtos" class="px-4 py-2 w-48 focus:outline-none text-sm text-gray-500">
-              <button class="px-3">
-                <i class="fa-solid fa-magnifying-glass text-gray-700 hover:text-green-500 cursor-pointer"></i>
+
+          <div>
+            <label for="password" class="block text-sm font-medium text-gray-700 mb-1.5">Password</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              class="w-full px-3 md:px-4 py-2 text-sm md:text-base border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-lime-500 focus:border-transparent"
+              placeholder="Digite sua senha"
+            />
+          </div>
+
+          <button
+            type="submit"
+            class="w-full bg-lime-500 text-white py-2 px-4 rounded-md hover:bg-lime-600 transition-colors duration-200 font-medium text-sm md:text-base"
+          >
+            Login
+          </button>
+
+          <div class="text-center text-sm md:text-base space-x-2">
+            <a href="#" class="text-lime-500 hover:text-lime-600">Criar Conta</a>
+            <span class="text-gray-400">|</span>
+            <a href="#" class="text-lime-500 hover:text-lime-600">Esqueceu a Senha?</a>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="bg-lime-500 text-white py-8 md:py-12">
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-8">
+          <!-- User Area -->
+          <div class="lg:col-span-2">
+            <h3 class="text-lg md:text-xl font-semibold mb-4">Área do Usuário</h3>
+            <ul class="space-y-2 text-sm md:text-base">
+              <li><a href="#" class="hover:text-gray-200">Minha Conta</a></li>
+              <li><a href="#" class="hover:text-gray-200">Meu Carrinho</a></li>
+              <li><a href="#" class="hover:text-gray-200">Login</a></li>
+              <li><a href="#" class="hover:text-gray-200">Checkout</a></li>
+            </ul>
+          </div>
+
+          <!-- Shopping Guide -->
+          <div class="lg:col-span-2">
+            <h3 class="text-lg md:text-xl font-semibold mb-4">Guia de Compras</h3>
+            <ul class="space-y-2 text-sm md:text-base">
+              <li><a href="#" class="hover:text-gray-200">Pagamento</a></li>
+              <li><a href="#" class="hover:text-gray-200">Envio</a></li>
+              <li><a href="#" class="hover:text-gray-200">FAQ</a></li>
+              <li><a href="#" class="hover:text-gray-200">Política de Devolução</a></li>
+            </ul>
+          </div>
+
+          <!-- Contact Details -->
+          <div class="lg:col-span-3">
+            <h3 class="text-lg md:text-xl font-semibold mb-4">Contato</h3>
+            <ul class="space-y-2 text-sm md:text-base">
+              <li class="flex items-center gap-2">
+                <i class="fa-solid fa-location-dot"></i>
+                <span>Setor Comercial Sul, Brasília-DF, Brasil</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <i class="fa-solid fa-phone"></i>
+                <span>(61) 1234-5678</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <i class="fa-solid fa-envelope"></i>
+                <span class="break-all">contato@supermercado.com</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Newsletter -->
+          <div class="lg:col-span-4">
+            <h3 class="text-lg md:text-xl font-semibold mb-4">Newsletter</h3>
+            <div class="flex flex-col gap-4">
+              <input type="email" placeholder="Seu e-mail" class="px-4 py-2 rounded-full text-gray-800 w-full" />
+              <button class="bg-green-600 hover:bg-green-700 px-6 py-2 rounded-full transition-colors w-full sm:w-auto">
+                Inscrever-se
               </button>
             </div>
-            <!-- Icons -->
-            <div class="flex space-x-4 text-xl">
-              <span class="cursor-pointer relative">
-                <a href="carrinho.html">
-                  <i class="fa-solid fa-cart-shopping text-gray-700 hover:text-green-500 cursor-pointer hover-underline"></i>
-                  <span id="cart-count" class="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center" style="display: none;">0</span>
-                </a>
-              </span>
-              <span class="cursor-pointer">
-                <a href="perfil.html">
-                  <i class="fa-solid fa-user text-gray-700 hover:text-green-500 cursor-pointer hover-underline"></i>
-                </a>
-              </span>
+            <div class="mt-4">
+              <h4 class="text-base md:text-lg font-semibold mb-2">Formas de Pagamento</h4>
+              <div class="flex gap-2">
+                <i class="fa-brands fa-cc-paypal text-xl md:text-2xl"></i>
+                <i class="fa-brands fa-cc-visa text-xl md:text-2xl"></i>
+                <i class="fa-brands fa-cc-mastercard text-xl md:text-2xl"></i>
+              </div>
             </div>
-          </div>
-        </nav>
-
-        <!-- Login Section -->
-        <div class="min-h-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8 -mt-32">
-          <div class="max-w-md w-full bg-white rounded-lg shadow-lg p-8">
-            <div class="text-center">
-              <h2 class="text-2xl font-bold text-gray-800 mb-2">Bem Vindo</h2>
-              <h3 class="text-xl text-gray-700 mb-8">Faça login para continuar</h3>
-            </div>
-
-            <form class="space-y-6">
-              <div>
-                <label for="username" class="block text-sm font-medium text-gray-700 mb-2">Username</label>
-                <input
-                  type="text"
-                  id="username"
-                  name="username"
-                  class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-lime-500 focus:border-transparent"
-                  placeholder="Digite seu nome de usuário"
-                />
-              </div>
-
-              <div>
-                <label for="password" class="block text-sm font-medium text-gray-700 mb-2">Password</label>
-                <input
-                  type="password"
-                  id="password"
-                  name="password"
-                  class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-lime-500 focus:border-transparent"
-                  placeholder="Digite sua senha"
-                />
-              </div>
-
-              <button
-                type="submit"
-                class="w-full bg-lime-500 text-white py-2 px-4 rounded-md hover:bg-lime-600 transition-colors duration-200 font-medium"
-              >
-                Login
-              </button>
-
-              <div class="text-center text-sm">
-                <a href="#" class="text-lime-500 hover:text-lime-600">Create Account</a>
-                <span class="mx-2 text-gray-400">|</span>
-                <a href="#" class="text-lime-500 hover:text-lime-600">Forgot Password?</a>
-              </div>
-            </form>
           </div>
         </div>
 
-        <footer>
-          <!-- Footer Section -->
-          <div class="bg-lime-500 text-white py-12">
-            <div class="max-w-7xl mx-auto px-4 grid grid-cols-12 gap-4">
-              <!-- User Area -->
-              <div class="col-span-2">
-                <h3 class="text-xl font-semibold mb-4">Área do Usuário</h3>
-                <ul class="space-y-2">
-                  <li><a href="#" class="hover:text-gray-200">Minha Conta</a></li>
-                  <li><a href="#" class="hover:text-gray-200">Meu Carrinho</a></li>
-                  <li><a href="#" class="hover:text-gray-200">Login</a></li>
-                  <li><a href="#" class="hover:text-gray-200">Checkout</a></li>
-                </ul>
-              </div>
-    
-              <!-- Shopping Guide -->
-              <div class="col-span-2">
-                <h3 class="text-xl font-semibold mb-4">Guia de Compras</h3>
-                <ul class="space-y-2">
-                  <li><a href="#" class="hover:text-gray-200">Pagamento</a></li>
-                  <li><a href="#" class="hover:text-gray-200">Envio</a></li>
-                  <li><a href="#" class="hover:text-gray-200">FAQ</a></li>
-                  <li>
-                    <a href="#" class="hover:text-gray-200"
-                      >Política de Devolução</a
-                    >
-                  </li>
-                </ul>
-              </div>
-    
-              <!-- Contact Details -->
-              <div class="col-span-3 ml-8">
-                <h3 class="text-xl font-semibold mb-4">Contato</h3>
-                <ul class="space-y-2">
-                  <li class="flex items-center gap-2">
-                    <i class="fa-solid fa-location-dot"></i>
-                    <span>Setor Comercial Sul, Brasília-DF, Brasil</span>
-                  </li>
-                  <li class="flex items-center gap-2">
-                    <i class="fa-solid fa-phone"></i>
-                    <span>(61) 1234-5678</span>
-                  </li>
-                  <li class="flex items-center gap-2">
-                    <i class="fa-solid fa-envelope"></i>
-                    <span>contato@supermercado.com</span>
-                  </li>
-                </ul>
-              </div>
-    
-              <!-- Newsletter -->
-              <div class="col-span-4 ml-12">
-                <h3 class="text-xl font-semibold mb-4">Newsletter</h3>
-                <div class="flex flex-col gap-4">
-                  <input
-                    type="email"
-                    placeholder="Seu e-mail"
-                    class="px-4 py-2 rounded-full text-gray-800"
-                  />
-                  <button
-                    class="bg-green-600 hover:bg-green-700 px-6 py-2 rounded-full transition-colors"
-                  >
-                    Inscrever-se
-                  </button>
-                </div>
-                <div class="mt-4">
-                  <h4 class="text-lg font-semibold mb-2">Formas de Pagamento</h4>
-                  <div class="flex gap-2">
-                    <i class="fa-brands fa-cc-paypal text-2xl"></i>
-                    <i class="fa-brands fa-cc-visa text-2xl"></i>
-                    <i class="fa-brands fa-cc-mastercard text-2xl"></i>
-                  </div>
-                </div>
-              </div>
-            </div>
-    
-            <!-- Copyright -->
-            <div class="border-t border-white/20 mt-8 pt-8 text-center">
-              <p>© Copyright 2025 por Supermercado Orgânico™</p>
-            </div>
-          </div>
-        </footer>
-    </body>
+        <!-- Copyright -->
+        <div class="border-t border-white/20 mt-8 pt-8 text-center text-sm md:text-base">
+          <p>© Copyright 2025 por Supermercado Orgânico™</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
