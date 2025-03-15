@@ -14,6 +14,7 @@
       src="https://kit.fontawesome.com/447127b9bf.js"
       crossorigin="anonymous"
     ></script>
+    <script src="../js/cart.js"></script>
   </head>
   <body class="bg-gray-100 font-[Poppins] min-h-screen flex flex-col">
     <nav class="bg-white shadow-md py-4 px-6 flex justify-between items-center">
@@ -58,19 +59,132 @@
         </div>
     </nav>
 
-    <!-- Empty Cart Section -->
+    <!-- Cart Section -->
     <div class="max-w-7xl mx-auto px-4 py-16 flex-grow">
-      <div class="text-center">
-        <div class="mb-8">
-          <i class="fa-solid fa-cart-shopping text-lime-500 text-7xl mb-6"></i>
-          <h2 class="text-3xl font-semibold text-gray-800 mb-4">SEU CARRINHO ESTÁ VAZIO!</h2>
-          <p class="text-gray-600 mb-8">Parece que você ainda não fez suas escolhas. Explore nossa loja e descubra produtos orgânicos incríveis!</p>
-          <a href="shop.html" class="bg-lime-500 text-white px-8 py-3 rounded-full hover:bg-lime-600 transition-colors inline-block">
-            Continuar Comprando
-          </a>
-        </div>
+      <div id="cart-content">
+        <!-- O conteúdo do carrinho será inserido aqui via JavaScript -->
       </div>
     </div>
+
+    <script>
+      let cartContent;
+      
+      function incrementQuantity(productId) {
+        const item = Cart.items.find(item => item.id === productId);
+        if (item) {
+          Cart.updateQuantity(productId, item.quantity + 1);
+          updateItemDisplay(productId);
+          updateTotal();
+        }
+      }
+
+      function decrementQuantity(productId) {
+        const item = Cart.items.find(item => item.id === productId);
+        if (item && item.quantity > 1) {
+          Cart.updateQuantity(productId, item.quantity - 1);
+          updateItemDisplay(productId);
+          updateTotal();
+        }
+      }
+
+      function removeFromCart(productId) {
+        Cart.removeItem(productId);
+        updateCartUI();
+      }
+
+      function updateItemDisplay(productId) {
+        const item = Cart.items.find(item => item.id === productId);
+        if (item) {
+          const quantityElement = document.getElementById(`quantity-${productId}`);
+          if (quantityElement) {
+            quantityElement.textContent = item.quantity;
+          }
+        }
+      }
+
+      function updateTotal() {
+        const total = Cart.items.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+        const totalElement = document.getElementById('cart-total');
+        if (totalElement) {
+          totalElement.textContent = `Total: R$ ${total.toFixed(2)}`;
+        }
+      }
+
+      function updateCartUI() {
+        if (!cartContent) return;
+        
+        if (Cart.items.length === 0) {
+          cartContent.innerHTML = `
+            <div class="text-center">
+              <div class="mb-8">
+                <i class="fa-solid fa-cart-shopping text-lime-500 text-7xl mb-6"></i>
+                <h2 class="text-3xl font-semibold text-gray-800 mb-4">SEU CARRINHO ESTÁ VAZIO!</h2>
+                <p class="text-gray-600 mb-8">Parece que você ainda não fez suas escolhas. Explore nossa loja e descubra produtos orgânicos incríveis!</p>
+                <a href="shop.html" class="bg-lime-500 text-white px-2 py-3 rounded-full hover:bg-lime-600 transition-colors inline-block">
+                  Continuar Comprando
+                </a>
+              </div>
+            </div>
+          `;
+        } else {
+          const total = Cart.items.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+          
+          cartContent.innerHTML = `
+            <div class="bg-white rounded-lg shadow-md p-6">
+              <h2 class="text-2xl font-semibold mb-6">Seu Carrinho</h2>
+              <div class="space-y-4">
+                ${Cart.items.map(item => `
+                  <div class="flex items-center justify-between border-b pb-4">
+                    <div class="flex items-center space-x-4">
+                      <img src="${item.image}" alt="${item.name}" class="w-16 h-16 object-cover rounded">
+                      <div>
+                        <h3 class="font-semibold">${item.name}</h3>
+                        <p class="text-green-500">R$ ${item.price.toFixed(2)}</p>
+                      </div>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                      <div class="flex items-center space-x-2">
+                        <button onclick="decrementQuantity('${item.id}')" class="bg-gray-200 px-3 py-1 rounded">-</button>
+                        <span id="quantity-${item.id}">${item.quantity}</span>
+                        <button onclick="incrementQuantity('${item.id}')" class="bg-gray-200 px-3 py-1 rounded">+</button>
+                      </div>
+                      <button onclick="removeFromCart('${item.id}')" class="text-red-500">
+                        <i class="fa-solid fa-trash"></i>
+                      </button>
+                    </div>
+                  </div>
+                `).join('')}
+              </div>
+              <div class="mt-6 flex justify-between items-center">
+                <div>
+                  <p class="text-xl font-semibold px-6" id="cart-total">Total: R$ ${total.toFixed(2)}</p>
+                </div>
+                <div class="space-x-4">
+                  <a href="shop.html" class="bg-gray-500 text-white px-6 py-2 rounded-full hover:bg-gray-600 transition-colors inline-block">
+                    Continuar Comprando
+                  </a>
+                  <button class="bg-green-500 text-white px-6 py-2 rounded-full hover:bg-green-600 transition-colors">
+                    Finalizar Compra
+                  </button>
+                </div>
+              </div>
+            </div>
+          `;
+        }
+      }
+
+      document.addEventListener('DOMContentLoaded', () => {
+        cartContent = document.getElementById('cart-content');
+        
+        if (!Cart || typeof Cart.init !== 'function') {
+          console.error('Cart não foi inicializado corretamente');
+          return;
+        }
+
+        Cart.init();
+        updateCartUI();
+      });
+    </script>
 
     <!-- Footer Section -->
     <div class="bg-lime-500 text-white py-12 mt-auto">

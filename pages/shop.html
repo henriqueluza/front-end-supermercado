@@ -15,6 +15,7 @@
       src="https://kit.fontawesome.com/447127b9bf.js"
       crossorigin="anonymous"
     ></script>
+    <script src="../js/cart.js"></script>
   </head>
   <body class="bg-gray-100 font-[Poppins] relative">
       <nav class="bg-white shadow-md py-4 px-6 flex justify-between items-center">
@@ -45,9 +46,10 @@
           </div>
           <!-- Icons -->
           <div class="flex space-x-4 text-xl">
-            <span class="cursor-pointer">
+            <span class="cursor-pointer relative">
               <a href="carrinho.html">
                 <i class="fa-solid fa-cart-shopping text-gray-700 hover:text-green-500 cursor-pointer hover-underline"></i>
+                <span id="cart-count" class="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center" style="display: none;">0</span>
               </a>
             </span>
             <span class="cursor-pointer">
@@ -63,515 +65,578 @@
         <h1 class="text-4xl font-bold">Nossos Produtos</h1>
       </div>
 
-      <section class="py-12 mx-64 relative">
-        <div class="flex justify-center space-x-6 mt-6 border-b-2 pb-4">
-          <p
-            class="category-btn text-green-600 font-semibold border-b-2 border-green-600 cursor-pointer"
-            data-category="vegetais"
-          >
-            Vegetais e Frutas
-          </p>
-          <p class="category-btn hover:text-green-500 cursor-pointer hover-underline" data-category="padaria">
-            Padaria
-          </p>
-          <p class="category-btn hover:text-green-500 cursor-pointer hover-underline" data-category="carnes">
-            Carnes
-          </p>
-          <p class="category-btn hover:text-green-500 cursor-pointer hover-underline" data-category="comidas">
-            Comidas e Bebidas
-          </p>
-        </div>
-        <div class="overflow-hidden">
-          <div class="products-container transition-transform duration-500 flex">
-            <!-- Grid Vegetais e Frutas -->
-            <div class="products-grid mt-8 min-w-full">
-              <!-- Card 1 -->
-              <div class="bg-white p-4 shadow-md text-center product-card">
-                <img src="../assets/Tomate.webp" alt="Tomate Orgânico" class="mx-auto product-image">
-                <p class="font-semibold">Tomate Orgânico</p>
-                <p class="text-green-500">R$ 8,99/kg</p>
-                <button class="mt-4 bg-green-500 text-white px-6 py-2 rounded-full hover:bg-green-600 transition-colors">
-                  Comprar
-                </button>
-              </div>
-
-              <!-- Card 2 -->
-              <div class="bg-white p-4 shadow-md text-center product-card">
-                <img src="../assets/Alface.webp" alt="Alface Crespa" class="mx-auto product-image">
-                <p class="font-semibold">Alface Crespa</p>
-                <p class="text-green-500">R$ 4,99/un</p>
-                <button class="mt-4 bg-green-500 text-white px-6 py-2 rounded-full hover:bg-green-600 transition-colors">
-                  Comprar
-                </button>
-              </div>
-
-              <!-- Card 3 -->
-              <div class="bg-white p-4 shadow-md text-center product-card">
-                <img src="../assets/Cenoura.webp" alt="Cenoura Orgânica" class="mx-auto product-image">
-                <p class="font-semibold">Cenoura Orgânica</p>
-                <p class="text-green-500">R$ 5,99/kg</p>
-                <button class="mt-4 bg-green-500 text-white px-6 py-2 rounded-full hover:bg-green-600 transition-colors">
-                  Comprar
-                </button>
-              </div>
-
-              <!-- Card 4 -->
-              <div class="bg-white p-4 shadow-md text-center product-card">
-                <img src="../assets/Batata-Doce.webp" alt="Batata Doce" class="mx-auto product-image">
-                <p class="font-semibold">Batata Doce</p>
-                <p class="text-green-500">R$ 6,99/kg</p>
-                <button class="mt-4 bg-green-500 text-white px-6 py-2 rounded-full hover:bg-green-600 transition-colors">
-                  Comprar
-                </button>
-              </div>
-
-              <!-- Card 5 -->
-              <div class="bg-white p-4 shadow-md text-center product-card">
-                <img src="../assets/Espinafre.jpg" alt="Espinafre" class="mx-auto product-image">
-                <p class="font-semibold">Espinafre</p>
-                <p class="text-green-500">R$ 3,99/maço</p>
-                <button class="mt-4 bg-green-500 text-white px-6 py-2 rounded-full hover:bg-green-600 transition-colors">
-                  Comprar
-                </button>
-              </div>
-
-              <!-- Card 6 -->
-              <div class="bg-white p-4 shadow-md text-center product-card">
-                <img src="../assets/Pepino.webp" alt="Pepino" class="mx-auto product-image">
-                <p class="font-semibold">Pepino</p>
-                <p class="text-green-500">R$ 4,50/kg</p>
-                <button class="mt-4 bg-green-500 text-white px-6 py-2 rounded-full hover:bg-green-600 transition-colors">
-                  Comprar
-                </button>
-              </div>
-
-              <!-- Card 7 -->
-              <div class="bg-white p-4 shadow-md text-center product-card">
-                <img src="../assets/Brocoli.webp" alt="Brócolis" class="mx-auto product-image">
-                <p class="font-semibold">Brócolis</p>
-                <p class="text-green-500">R$ 7,99/un</p>
-                <button class="mt-4 bg-green-500 text-white px-6 py-2 rounded-full hover:bg-green-600 transition-colors">
-                  Comprar
-                </button>
-              </div>
-
-              <!-- Card 8 -->
-              <div class="bg-white p-4 shadow-md text-center product-card">
-                <img src="../assets/Pimentao.webp" alt="Pimentão" class="mx-auto product-image">
-                <p class="font-semibold">Pimentão</p>
-                <p class="text-green-500">R$ 9,99/kg</p>
-                <button class="mt-4 bg-green-500 text-white px-6 py-2 rounded-full hover:bg-green-600 transition-colors">
-                  Comprar
-                </button>
-              </div>
-
-              <!-- Card 9 -->
-              <div class="bg-white p-4 shadow-md text-center product-card">
-                <img src="../assets/Abobrinha.webp" alt="Abobrinha" class="mx-auto product-image">
-                <p class="font-semibold">Abobrinha</p>
-                <p class="text-green-500">R$ 5,99/kg</p>
-                <button class="mt-4 bg-green-500 text-white px-6 py-2 rounded-full hover:bg-green-600 transition-colors">
-                  Comprar
-                </button>
-              </div>
-
-              <!-- Card 10 -->
-              <div class="bg-white p-4 shadow-md text-center product-card">
-                <img src="../assets/Couveflor.webp" alt="Couve-flor" class="mx-auto product-image">
-                <p class="font-semibold">Couve-flor</p>
-                <p class="text-green-500">R$ 8,50/un</p>
-                <button class="mt-4 bg-green-500 text-white px-6 py-2 rounded-full hover:bg-green-600 transition-colors">
-                  Comprar
-                </button>
-              </div>
-
-              <!-- Card 11 -->
-              <div class="bg-white p-4 shadow-md text-center product-card">
-                <img src="../assets/Berimjela.webp" alt="Berinjela" class="mx-auto product-image">
-                <p class="font-semibold">Berinjela</p>
-                <p class="text-green-500">R$ 6,99/kg</p>
-                <button class="mt-4 bg-green-500 text-white px-6 py-2 rounded-full hover:bg-green-600 transition-colors">
-                  Comprar
-                </button>
-              </div>
-
-              <!-- Card 12 -->
-              <div class="bg-white p-4 shadow-md text-center product-card">
-                <img src="../assets/Repolho.webp" alt="Repolho" class="mx-auto product-image">
-                <p class="font-semibold">Repolho</p>
-                <p class="text-green-500">R$ 5,50/un</p>
-                <button class="mt-4 bg-green-500 text-white px-6 py-2 rounded-full hover:bg-green-600 transition-colors">
-                  Comprar
-                </button>
+      <section class="py-12 container mx-auto px-4 relative">
+        <!-- Filtros -->
+        <div class="flex gap-8 justify-center">
+          <div class="w-64 bg-white p-6 shadow-md h-fit sticky top-4">
+            <h3 class="text-xl font-semibold mb-4">Filtros</h3>
+            
+            <!-- Filtro de Preço -->
+            <div class="mb-6">
+              <h4 class="font-semibold mb-2">Preço</h4>
+              <div class="space-y-2">
+                <div>
+                  <label class="text-sm text-gray-600">Mínimo:</label>
+                  <input type="number" id="minPrice" class="w-full border rounded px-2 py-1" placeholder="R$ 0">
+                </div>
+                <div>
+                  <label class="text-sm text-gray-600">Máximo:</label>
+                  <input type="number" id="maxPrice" class="w-full border rounded px-2 py-1" placeholder="R$ 1000">
+                </div>
               </div>
             </div>
 
-            <!-- Grid Padaria -->
-            <div class="products-grid mt-8 min-w-full">
-              <!-- Card 1 -->
-              <div class="bg-white p-4 shadow-md text-center product-card">
-                <img src="../assets/Pao-Frances.webp" alt="Pão Francês" class="mx-auto product-image">
-                <p class="font-semibold">Pão Francês</p>
-                <p class="text-green-500">R$ 2,99/un</p>
-                <button class="mt-4 bg-green-500 text-white px-6 py-2 rounded-full hover:bg-green-600 transition-colors">
-                  Comprar
-                </button>
-              </div>
-
-              <!-- Card 2 -->
-              <div class="bg-white p-4 shadow-md text-center product-card">
-                <img src="../assets/Pao-integral.webp" alt="Pão Integral" class="mx-auto product-image">
-                <p class="font-semibold">Pão Integral</p>
-                <p class="text-green-500">R$ 8,99/un</p>
-                <button class="mt-4 bg-green-500 text-white px-6 py-2 rounded-full hover:bg-green-600 transition-colors">
-                  Comprar
-                </button>
-              </div>
-
-              <!-- Card 3 -->
-              <div class="bg-white p-4 shadow-md text-center product-card">
-                <img src="../assets/croissant.webp" alt="Croissant" class="mx-auto product-image">
-                <p class="font-semibold">Croissant</p>
-                <p class="text-green-500">R$ 5,99/un</p>
-                <button class="mt-4 bg-green-500 text-white px-6 py-2 rounded-full hover:bg-green-600 transition-colors">
-                  Comprar
-                </button>
-              </div>
-
-              <!-- Card 4 -->
-              <div class="bg-white p-4 shadow-md text-center product-card">
-                <img src="../assets/cake.webp" alt="Bolo de Chocolate" class="mx-auto product-image">
-                <p class="font-semibold">Bolo de Chocolate</p>
-                <p class="text-green-500">R$ 45,99/kg</p>
-                <button class="mt-4 bg-green-500 text-white px-6 py-2 rounded-full hover:bg-green-600 transition-colors">
-                  Comprar
-                </button>
-              </div>
-
-              <!-- Card 5 -->
-              <div class="bg-white p-4 shadow-md text-center product-card">
-                <img src="../assets/pao-de-queijo.webp" alt="Pão de Queijo" class="mx-auto product-image">
-                <p class="font-semibold">Pão de Queijo</p>
-                <p class="text-green-500">R$ 25,99/kg</p>
-                <button class="mt-4 bg-green-500 text-white px-6 py-2 rounded-full hover:bg-green-600 transition-colors">
-                  Comprar
-                </button>
-              </div>
-
-              <!-- Card 6 -->
-              <div class="bg-white p-4 shadow-md text-center product-card">
-                <img src="../assets/cookie.webp" alt="Cookie" class="mx-auto product-image">
-                <p class="font-semibold">-Cookie</p>
-                <p class="text-green-500">R$ 15,99/un</p>
-                <button class="mt-4 bg-green-500 text-white px-6 py-2 rounded-full hover:bg-green-600 transition-colors">
-                  Comprar
-                </button>
-              </div>
-
-              <!-- Card 7 -->
-              <div class="bg-white p-4 shadow-md text-center product-card">
-                <img src="../assets/sonho.webp" alt="Sonho" class="mx-auto product-image">
-                <p class="font-semibold">Sonho</p>
-                <p class="text-green-500">R$ 6,99/un</p>
-                <button class="mt-4 bg-green-500 text-white px-6 py-2 rounded-full hover:bg-green-600 transition-colors">
-                  Comprar
-                </button>
-              </div>
-
-              <!-- Card 8 -->
-              <div class="bg-white p-4 shadow-md text-center product-card">
-                <img src="../assets/baguette.webp" alt="Baguete" class="mx-auto product-image">
-                <p class="font-semibold">Baguete</p>
-                <p class="text-green-500">R$ 12,99/un</p>
-                <button class="mt-4 bg-green-500 text-white px-6 py-2 rounded-full hover:bg-green-600 transition-colors">
-                  Comprar
-                </button>
-              </div>
-
-              <!-- Card 9 -->
-              <div class="bg-white p-4 shadow-md text-center product-card">
-                <img src="../assets/rosca.webp" alt="Rosca Doce" class="mx-auto product-image">
-                <p class="font-semibold">Rosca Doce</p>
-                <p class="text-green-500">R$ 18,99/un</p>
-                <button class="mt-4 bg-green-500 text-white px-6 py-2 rounded-full hover:bg-green-600 transition-colors">
-                  Comprar
-                </button>
-              </div>
-
-              <!-- Card 10 -->
-              <div class="bg-white p-4 shadow-md text-center product-card">
-                <img src="../assets/pie.webp" alt="Torta" class="mx-auto product-image">
-                <p class="font-semibold">Torta de Maçã</p>
-                <p class="text-green-500">R$ 35,99/kg</p>
-                <button class="mt-4 bg-green-500 text-white px-6 py-2 rounded-full hover:bg-green-600 transition-colors">
-                  Comprar
-                </button>
-              </div>
-
-              <!-- Card 11 -->
-              <div class="bg-white p-4 shadow-md text-center product-card">
-                <img src="../assets/brioche.webp" alt="Brioche" class="mx-auto product-image">
-                <p class="font-semibold">Brioche</p>
-                <p class="text-green-500">R$ 22,99/un</p>
-                <button class="mt-4 bg-green-500 text-white px-6 py-2 rounded-full hover:bg-green-600 transition-colors">
-                  Comprar
-                </button>
-              </div>
-
-              <!-- Card 12 -->
-              <div class="bg-white p-4 shadow-md text-center product-card">
-                <img src="../assets/coxinha.webp" alt="Coxinha" class="mx-auto product-image">
-                <p class="font-semibold">Coxinha</p>
-                <p class="text-green-500">R$ 7,99/un</p>
-                <button class="mt-4 bg-green-500 text-white px-6 py-2 rounded-full hover:bg-green-600 transition-colors">
-                  Comprar
-                </button>
+            <!-- Filtro de Desconto -->
+            <div class="mb-6">
+              <h4 class="font-semibold mb-2">Desconto</h4>
+              <div class="space-y-2">
+                <label class="flex items-center">
+                  <input type="checkbox" id="discount10" value="10" class="discount-filter mr-2">
+                  <span>10% ou mais</span>
+                </label>
+                <label class="flex items-center">
+                  <input type="checkbox" id="discount20" value="20" class="discount-filter mr-2">
+                  <span>20% ou mais</span>
+                </label>
+                <label class="flex items-center">
+                  <input type="checkbox" id="discount30" value="30" class="discount-filter mr-2">
+                  <span>30% ou mais</span>
+                </label>
               </div>
             </div>
 
-            <!-- Grid Carnes -->
-            <div class="products-grid mt-8 min-w-full">
-              <!-- Card 1 -->
-              <div class="bg-white p-4 shadow-md text-center product-card">
-                <img src="../assets/file-mignon.webp" alt="Filé Mignon" class="mx-auto product-image">
-                <p class="font-semibold">Filé Mignon</p>
-                <p class="text-green-500">R$ 89,99/kg</p>
-                <button class="mt-4 bg-green-500 text-white px-6 py-2 rounded-full hover:bg-green-600 transition-colors">
-                  Comprar
-                </button>
-              </div>
+            <!-- Botão Aplicar Filtros -->
+            <button id="applyFilters" class="w-full bg-green-500 text-white px-4 py-2 rounded-full hover:bg-green-600 transition-colors">
+              Aplicar Filtros
+            </button>
+          </div>
 
-              <!-- Card 2 -->
-              <div class="bg-white p-4 shadow-md text-center product-card">
-                <img src="../assets/peito-de-frango.webp" alt="Peito de Frango" class="mx-auto product-image">
-                <p class="font-semibold">Peito de Frango</p>
-                <p class="text-green-500">R$ 29,99/kg</p>
-                <button class="mt-4 bg-green-500 text-white px-6 py-2 rounded-full hover:bg-green-600 transition-colors">
-                  Comprar
-                </button>
-              </div>
-
-              <!-- Card 3 -->
-              <div class="bg-white p-4 shadow-md text-center product-card">
-                <img src="../assets/picanha.jpg" alt="Picanha" class="mx-auto product-image">
-                <p class="font-semibold">Picanha</p>
-                <p class="text-green-500">R$ 99,99/kg</p>
-                <button class="mt-4 bg-green-500 text-white px-6 py-2 rounded-full hover:bg-green-600 transition-colors">
-                  Comprar
-                </button>
-              </div>
-
-              <!-- Card 4 -->
-              <div class="bg-white p-4 shadow-md text-center product-card">
-                <img src="../assets/costela.webp" alt="Costela Premium" class="mx-auto product-image">
-                <p class="font-semibold">Costela Premium</p>
-                <p class="text-green-500">R$ 49,99/kg</p>
-                <button class="mt-4 bg-green-500 text-white px-6 py-2 rounded-full hover:bg-green-600 transition-colors">
-                  Comprar
-                </button>
-              </div>
-
-              <!-- Card 5 -->
-              <div class="bg-white p-4 shadow-md text-center product-card">
-                <img src="../assets/Linguiça.jpg" alt="Linguiça Artesanal" class="mx-auto product-image">
-                <p class="font-semibold">Linguiça Artesanal</p>
-                <p class="text-green-500">R$ 32,99/kg</p>
-                <button class="mt-4 bg-green-500 text-white px-6 py-2 rounded-full hover:bg-green-600 transition-colors">
-                  Comprar
-                </button>
-              </div>
-
-              <!-- Card 6 -->
-              <div class="bg-white p-4 shadow-md text-center product-card">
-                <img src="../assets/alcatra.webp" alt="Alcatra" class="mx-auto product-image">
-                <p class="font-semibold">Alcatra</p>
-                <p class="text-green-500">R$ 59,99/kg</p>
-                <button class="mt-4 bg-green-500 text-white px-6 py-2 rounded-full hover:bg-green-600 transition-colors">
-                  Comprar
-                </button>
-              </div>
-
-              <!-- Card 7 -->
-              <div class="bg-white p-4 shadow-md text-center product-card">
-                <img src="../assets/pernil.jpg" alt="Pernil de Cordeiro" class="mx-auto product-image">
-                <p class="font-semibold">Pernil de Cordeiro</p>
-                <p class="text-green-500">R$ 89,99/kg</p>
-                <button class="mt-4 bg-green-500 text-white px-6 py-2 rounded-full hover:bg-green-600 transition-colors">
-                  Comprar
-                </button>
-              </div>
-
-              <!-- Card 8 -->
-              <div class="bg-white p-4 shadow-md text-center product-card">
-                <img src="../assets/coxa-de-frango.webp" alt="Coxa de Frango" class="mx-auto product-image">
-                <p class="font-semibold">Coxa de Frango</p>
-                <p class="text-green-500">R$ 19,99/kg</p>
-                <button class="mt-4 bg-green-500 text-white px-6 py-2 rounded-full hover:bg-green-600 transition-colors">
-                  Comprar
-                </button>
-              </div>
-
-              <!-- Card 9 -->
-              <div class="bg-white p-4 shadow-md text-center product-card">
-                <img src="../assets/contrafile.webp" alt="Contra Filé" class="mx-auto product-image">
-                <p class="font-semibold">Contra Filé</p>
-                <p class="text-green-500">R$ 69,99/kg</p>
-                <button class="mt-4 bg-green-500 text-white px-6 py-2 rounded-full hover:bg-green-600 transition-colors">
-                  Comprar
-                </button>
-              </div>
-
-              <!-- Card 10 -->
-              <div class="bg-white p-4 shadow-md text-center product-card">
-                <img src="../assets/cupim.jpeg" alt="Cupim" class="mx-auto product-image">
-                <p class="font-semibold">Cupim</p>
-                <p class="text-green-500">R$ 54,99/kg</p>
-                <button class="mt-4 bg-green-500 text-white px-6 py-2 rounded-full hover:bg-green-600 transition-colors">
-                  Comprar
-                </button>
-              </div>
-
-              <!-- Card 11 -->
-              <div class="bg-white p-4 shadow-md text-center product-card">
-                <img src="../assets/maminha.webp" alt="Maminha" class="mx-auto product-image">
-                <p class="font-semibold">Maminha</p>
-                <p class="text-green-500">R$ 64,99/kg</p>
-                <button class="mt-4 bg-green-500 text-white px-6 py-2 rounded-full hover:bg-green-600 transition-colors">
-                  Comprar
-                </button>
-              </div>
-
-              <!-- Card 12 -->
-              <div class="bg-white p-4 shadow-md text-center product-card">
-                <img src="../assets/bisteca.webp" alt="Bisteca Suína" class="mx-auto product-image">
-                <p class="font-semibold">Bisteca Suína</p>
-                <p class="text-green-500">R$ 29,99/kg</p>
-                <button class="mt-4 bg-green-500 text-white px-6 py-2 rounded-full hover:bg-green-600 transition-colors">
-                  Comprar
-                </button>
-              </div>
+          <div class="flex-1 max-w-5xl">
+            <div class="flex justify-center space-x-6 mt-6 border-b-2 pb-4">
+              <p
+                class="category-btn text-green-600 font-semibold border-b-2 border-green-600 cursor-pointer"
+                data-category="vegetais"
+              >
+                Vegetais e Frutas
+              </p>
+              <p class="category-btn hover:text-green-500 cursor-pointer hover-underline" data-category="padaria">
+                Padaria
+              </p>
+              <p class="category-btn hover:text-green-500 cursor-pointer hover-underline" data-category="carnes">
+                Carnes
+              </p>
+              <p class="category-btn hover:text-green-500 cursor-pointer hover-underline" data-category="comidas">
+                Comidas e Bebidas
+              </p>
             </div>
+            <div class="overflow-hidden">
+              <div class="products-container transition-transform duration-500 flex">
+                <!-- Grid Vegetais e Frutas -->
+                <div class="products-grid mt-8 min-w-full">
+                  <!-- Card 1 -->
+                  <div class="bg-white p-4 shadow-md text-center product-card" data-price="8.99" data-discount="20">
+                    <div class="relative">
+                      <a href="produto.html?id=tomate-organico"><img src="../assets/Tomate.webp" alt="Tomate Orgânico" class="mx-auto product-image"></a>
+                      <span class="absolute top-0 right-0 bg-red-500 text-white px-2 py-1 rounded-bl-lg">-20%</span>
+                    </div>
+                    <p class="font-semibold">Tomate Orgânico</p>
+                    <p class="text-gray-500 line-through text-sm">R$ 11,24/kg</p>
+                    <p class="text-green-500">R$ 8,99/kg</p>
+                    <button class="mt-4 bg-green-500 text-white px-6 py-2 rounded-full hover:bg-green-600 transition-colors">
+                      <a href="produto.html?id=tomate-organico" class="text-white block w-full h-full">Comprar</a>
+                    </button>
+                    
+                  </div>
 
-            <!-- Grid Comidas e Bebidas -->
-            <div class="products-grid mt-8 min-w-full">
-              <!-- Card 1 -->
-              <div class="bg-white p-4 shadow-md text-center product-card">
-                <img src="../assets/Suco_de_Laranja.webp" alt="Suco de Laranja" class="mx-auto product-image">
-                <p class="font-semibold">Suco de Laranja Natural</p>
-                <p class="text-green-500">R$ 12,99/L</p>
-                <button class="mt-4 bg-green-500 text-white px-6 py-2 rounded-full hover:bg-green-600 transition-colors">
-                  Comprar
-                </button>
-              </div>
+                  <!-- Card 2 -->
+                  <div class="bg-white p-4 shadow-md text-center product-card">
+                    <a href="produto.html?id=alface" class="block">
+                      <img src="../assets/Alface.webp" alt="Alface Crespa" class="mx-auto product-image">
+                      <p class="font-semibold">Alface Crespa</p>
+                      <p class="text-green-500">R$ 4,99/un</p>
+                    </a>
+                    <button class="mt-4 bg-green-500 text-white px-6 py-2 rounded-full hover:bg-green-600 transition-colors">
+                      <a href="produto.html?id=alface" class="text-white block w-full h-full">Comprar</a>
+                    </button>
+                  </div>
 
-              <!-- Card 2 -->
-              <div class="bg-white p-4 shadow-md text-center product-card">
-                <img src="../assets/granola.webp" alt="Granola" class="mx-auto product-image">
-                <p class="font-semibold">Granola Artesanal</p>
-                <p class="text-green-500">R$ 24,99/500g</p>
-                <button class="mt-4 bg-green-500 text-white px-6 py-2 rounded-full hover:bg-green-600 transition-colors">
-                  Comprar
-                </button>
-              </div>
+                  <!-- Card 3 -->
+                  <div class="bg-white p-4 shadow-md text-center product-card">
+                    <img src="../assets/Cenoura.webp" alt="Cenoura Orgânica" class="mx-auto product-image">
+                    <p class="font-semibold">Cenoura Orgânica</p>
+                    <p class="text-green-500">R$ 5,99/kg</p>
+                    <button class="mt-4 bg-green-500 text-white px-6 py-2 rounded-full hover:bg-green-600 transition-colors">
+                      <a href="produto.html?id=cenoura-organica" class="text-white block w-full h-full">Comprar</a>
+                    </button>
+                  </div>
 
-              <!-- Card 3 -->
-              <div class="bg-white p-4 shadow-md text-center product-card">
-                <img src="../assets/cha-verde.jpg" alt="Chá Verde" class="mx-auto product-image">
-                <p class="font-semibold">Chá Verde Orgânico</p>
-                <p class="text-green-500">R$ 15,99/100g</p>
-                <button class="mt-4 bg-green-500 text-white px-6 py-2 rounded-full hover:bg-green-600 transition-colors">
-                  Comprar
-                </button>
-              </div>
+                  <!-- Card 4 -->
+                  <div class="bg-white p-4 shadow-md text-center product-card">
+                    <img src="../assets/Batata-Doce.webp" alt="Batata Doce" class="mx-auto product-image">
+                    <p class="font-semibold">Batata Doce</p>
+                    <p class="text-green-500">R$ 6,99/kg</p>
+                    <button class="mt-4 bg-green-500 text-white px-6 py-2 rounded-full hover:bg-green-600 transition-colors">
+                      <a href="produto.html?id=batata-doce" class="text-white block w-full h-full">Comprar</a>
+                    </button>
+                  </div>
 
-              <!-- Card 4 -->
-              <div class="bg-white p-4 shadow-md text-center product-card">
-                <img src="../assets/cafe.png" alt="Café Orgânico" class="mx-auto product-image">
-                <p class="font-semibold">Café Orgânico</p>
-                <p class="text-green-500">R$ 29,99/500g</p>
-                <button class="mt-4 bg-green-500 text-white px-6 py-2 rounded-full hover:bg-green-600 transition-colors">
-                  Comprar
-                </button>
-              </div>
+                  <!-- Card 5 -->
+                  <div class="bg-white p-4 shadow-md text-center product-card">
+                    <img src="../assets/Espinafre.jpg" alt="Espinafre" class="mx-auto product-image">
+                    <p class="font-semibold">Espinafre</p>
+                    <p class="text-green-500">R$ 3,99/maço</p>
+                    <button class="mt-4 bg-green-500 text-white px-6 py-2 rounded-full hover:bg-green-600 transition-colors">
+                      <a href="produto.html?id=espinafre" class="text-white block w-full h-full">Comprar</a>
+                    </button>
+                  </div>
 
-              <!-- Card 5 -->
-              <div class="bg-white p-4 shadow-md text-center product-card">
-                <img src="../assets/Monster.webp" alt="Monster" class="mx-auto product-image">
-                <p class="font-semibold">Energético Monster</p>
-                <p class="text-green-500">R$ 15,99/500ml</p>
-                <button class="mt-4 bg-green-500 text-white px-6 py-2 rounded-full hover:bg-green-600 transition-colors">
-                  Comprar
-                </button>
-              </div>
+                  <!-- Card 6 -->
+                  <div class="bg-white p-4 shadow-md text-center product-card">
+                    <img src="../assets/Pepino.webp" alt="Pepino" class="mx-auto product-image">
+                    <p class="font-semibold">Pepino</p>
+                    <p class="text-green-500">R$ 4,50/kg</p>
+                    <button class="mt-4 bg-green-500 text-white px-6 py-2 rounded-full hover:bg-green-600 transition-colors">
+                      <a href="produto.html?id=pepino" class="text-white block w-full h-full">Comprar</a>
+                    </button>
+                  </div>
 
-              <!-- Card 6 -->
-              <div class="bg-white p-4 shadow-md text-center product-card">
-                <img src="../assets/mel.webp" alt="Mel Puro" class="mx-auto product-image">
-                <p class="font-semibold">Mel Puro</p>
-                <p class="text-green-500">R$ 35,99/500g</p>
-                <button class="mt-4 bg-green-500 text-white px-6 py-2 rounded-full hover:bg-green-600 transition-colors">
-                  Comprar
-                </button>
-              </div>
+                  <!-- Card 7 -->
+                  <div class="bg-white p-4 shadow-md text-center product-card">
+                    <img src="../assets/Brocoli.webp" alt="Brócolis" class="mx-auto product-image">
+                    <p class="font-semibold">Brócolis</p>
+                    <p class="text-green-500">R$ 7,99/un</p>
+                    <button class="mt-4 bg-green-500 text-white px-6 py-2 rounded-full hover:bg-green-600 transition-colors">
+                      <a href="produto.html?id=brocolis" class="text-white block w-full h-full">Comprar</a>
+                    </button>
+                  </div>
 
-              <!-- Card 7 -->
-              <div class="bg-white p-4 shadow-md text-center product-card">
-                <img src="../assets/Castanha-de-Caju.webp" alt="Castanha de Caju" class="mx-auto product-image">
-                <p class="font-semibold">Mix de Castanhas</p>
-                <p class="text-green-500">R$ 45,99/500g</p>
-                <button class="mt-4 bg-green-500 text-white px-6 py-2 rounded-full hover:bg-green-600 transition-colors">
-                  Comprar
-                </button>
-              </div>
+                  <!-- Card 8 -->
+                  <div class="bg-white p-4 shadow-md text-center product-card">
+                    <img src="../assets/Pimentao.webp" alt="Pimentão" class="mx-auto product-image">
+                    <p class="font-semibold">Pimentão</p>
+                    <p class="text-green-500">R$ 9,99/kg</p>
+                    <button class="mt-4 bg-green-500 text-white px-6 py-2 rounded-full hover:bg-green-600 transition-colors">
+                      <a href="produto.html?id=pimentao" class="text-white block w-full h-full">Comprar</a>
+                    </button>
+                  </div>
 
-              <!-- Card 8 -->
-              <div class="bg-white p-4 shadow-md text-center product-card">
-                <img src="../assets/goji.jpg" alt="Goji Berry" class="mx-auto product-image">
-                <p class="font-semibold">Goji Berry</p>
-                <p class="text-green-500">R$ 39,99/200g</p>
-                <button class="mt-4 bg-green-500 text-white px-6 py-2 rounded-full hover:bg-green-600 transition-colors">
-                  Comprar
-                </button>
-              </div>
+                  <!-- Card 9 -->
+                  <div class="bg-white p-4 shadow-md text-center product-card">
+                    <img src="../assets/Abobrinha.webp" alt="Abobrinha" class="mx-auto product-image">
+                    <p class="font-semibold">Abobrinha</p>
+                    <p class="text-green-500">R$ 5,99/kg</p>
+                    <button class="mt-4 bg-green-500 text-white px-6 py-2 rounded-full hover:bg-green-600 transition-colors">
+                      <a href="produto.html?id=abobrinha" class="text-white block w-full h-full">Comprar</a>
+                    </button>
+                  </div>
 
-              <!-- Card 9 -->
-              <div class="bg-white p-4 shadow-md text-center product-card">
-                <img src="../assets/quinoa.webp" alt="Quinoa" class="mx-auto product-image">
-                <p class="font-semibold">Quinoa</p>
-                <p class="text-green-500">R$ 25,99/500g</p>
-                <button class="mt-4 bg-green-500 text-white px-6 py-2 rounded-full hover:bg-green-600 transition-colors">
-                  Comprar
-                </button>
-              </div>
+                  <!-- Card 10 -->
+                  <div class="bg-white p-4 shadow-md text-center product-card">
+                    <img src="../assets/Couveflor.webp" alt="Couve-flor" class="mx-auto product-image">
+                    <p class="font-semibold">Couve-flor</p>
+                    <p class="text-green-500">R$ 8,50/un</p>
+                    <button class="mt-4 bg-green-500 text-white px-6 py-2 rounded-full hover:bg-green-600 transition-colors">
+                      <a href="produto.html?id=couve-flor" class="text-white block w-full h-full">Comprar</a>
+                    </button>
+                  </div>
 
-              <!-- Card 10 -->
-              <div class="bg-white p-4 shadow-md text-center product-card">
-                <img src="../assets/suco_verde.webp" alt="Suco Verde" class="mx-auto product-image">
-                <p class="font-semibold">Suco Verde</p>
-                <p class="text-green-500">R$ 13,99/500ml</p>
-                <button class="mt-4 bg-green-500 text-white px-6 py-2 rounded-full hover:bg-green-600 transition-colors">
-                  Comprar
-                </button>
-              </div>
+                  <!-- Card 11 -->
+                  <div class="bg-white p-4 shadow-md text-center product-card">
+                    <img src="../assets/Berimjela.webp" alt="Berinjela" class="mx-auto product-image">
+                    <p class="font-semibold">Berinjela</p>
+                    <p class="text-green-500">R$ 6,99/kg</p>
+                    <button class="mt-4 bg-green-500 text-white px-6 py-2 rounded-full hover:bg-green-600 transition-colors">
+                      <a href="produto.html?id=berinjela" class="text-white block w-full h-full">Comprar</a>
+                    </button>
+                  </div>
 
-              <!-- Card 11 -->
-              <div class="bg-white p-4 shadow-md text-center product-card">
-                <img src="../assets/açaí.webp" alt="Açaí Orgânico" class="mx-auto product-image">
-                <p class="font-semibold">Açaí Orgânico</p>
-                <p class="text-green-500">R$ 29,99/500g</p>
-                <button class="mt-4 bg-green-500 text-white px-6 py-2 rounded-full hover:bg-green-600 transition-colors">
-                  Comprar
-                </button>
-              </div>
+                  <!-- Card 12 -->
+                  <div class="bg-white p-4 shadow-md text-center product-card">
+                    <img src="../assets/Repolho.webp" alt="Repolho" class="mx-auto product-image">
+                    <p class="font-semibold">Repolho</p>
+                    <p class="text-green-500">R$ 5,50/un</p>
+                    <button class="mt-4 bg-green-500 text-white px-6 py-2 rounded-full hover:bg-green-600 transition-colors">
+                      <a href="produto.html?id=repolho" class="text-white block w-full h-full">Comprar</a>
+                    </button>
+                  </div>
+                </div>
 
-              <!-- Card 12 -->
-              <div class="bg-white p-4 shadow-md text-center product-card">
-                <img src="../assets/pasta-de-amendoim.webp" alt="Pasta de Amendoim" class="mx-auto product-image">
-                <p class="font-semibold">Pasta de Amendoim</p>
-                <p class="text-green-500">R$ 19,99/500g</p>
-                <button class="mt-4 bg-green-500 text-white px-6 py-2 rounded-full hover:bg-green-600 transition-colors">
-                  Comprar
-                </button>
+                <!-- Grid Padaria -->
+                <div class="products-grid mt-8 min-w-full">
+                  <!-- Card 1 -->
+                  <div class="bg-white p-4 shadow-md text-center product-card">
+                    <img src="../assets/Pao-Frances.webp" alt="Pão Francês" class="mx-auto product-image">
+                    <p class="font-semibold">Pão Francês</p>
+                    <p class="text-green-500">R$ 2,99/un</p>
+                    <button class="mt-4 bg-green-500 text-white px-6 py-2 rounded-full hover:bg-green-600 transition-colors">
+                      <a href="produto.html?id=pao-frances" class="text-white block w-full h-full">Comprar</a>
+                    </button>
+                  </div>
+
+                  <!-- Card 2 -->
+                  <div class="bg-white p-4 shadow-md text-center product-card">
+                    <img src="../assets/Pao-integral.webp" alt="Pão Integral" class="mx-auto product-image">
+                    <p class="font-semibold">Pão Integral</p>
+                    <p class="text-green-500">R$ 8,99/un</p>
+                    <button class="mt-4 bg-green-500 text-white px-6 py-2 rounded-full hover:bg-green-600 transition-colors">
+                      <a href="produto.html?id=pao-integral" class="text-white block w-full h-full">Comprar</a>
+                    </button>
+                  </div>
+
+                  <!-- Card 3 -->
+                  <div class="bg-white p-4 shadow-md text-center product-card">
+                    <img src="../assets/croissant.webp" alt="Croissant" class="mx-auto product-image">
+                    <p class="font-semibold">Croissant</p>
+                    <p class="text-green-500">R$ 5,99/un</p>
+                    <button class="mt-4 bg-green-500 text-white px-6 py-2 rounded-full hover:bg-green-600 transition-colors">
+                      <a href="produto.html?id=croissant" class="text-white block w-full h-full">Comprar</a>
+                    </button>
+                  </div>
+
+                  <!-- Card 4 -->
+                  <div class="bg-white p-4 shadow-md text-center product-card">
+                    <img src="../assets/cake.webp" alt="Bolo de Chocolate" class="mx-auto product-image">
+                    <p class="font-semibold">Bolo de Chocolate</p>
+                    <p class="text-green-500">R$ 45,99/kg</p>
+                    <button class="mt-4 bg-green-500 text-white px-6 py-2 rounded-full hover:bg-green-600 transition-colors">
+                      <a href="produto.html?id=bolo-de-chocolate" class="text-white block w-full h-full">Comprar</a>
+                    </button>
+                  </div>
+
+                  <!-- Card 5 -->
+                  <div class="bg-white p-4 shadow-md text-center product-card">
+                    <img src="../assets/pao-de-queijo.webp" alt="Pão de Queijo" class="mx-auto product-image">
+                    <p class="font-semibold">Pão de Queijo</p>
+                    <p class="text-green-500">R$ 25,99/kg</p>
+                    <button class="mt-4 bg-green-500 text-white px-6 py-2 rounded-full hover:bg-green-600 transition-colors">
+                      <a href="produto.html?id=pao-de-queijo" class="text-white block w-full h-full">Comprar</a>
+                    </button>
+                  </div>
+
+                  <!-- Card 6 -->
+                  <div class="bg-white p-4 shadow-md text-center product-card">
+                    <img src="../assets/cookie.webp" alt="Cookie" class="mx-auto product-image">
+                    <p class="font-semibold">-Cookie</p>
+                    <p class="text-green-500">R$ 15,99/un</p>
+                    <button class="mt-4 bg-green-500 text-white px-6 py-2 rounded-full hover:bg-green-600 transition-colors">
+                      <a href="produto.html?id=cookie" class="text-white block w-full h-full">Comprar</a>
+                    </button>
+                  </div>
+
+                  <!-- Card 7 -->
+                  <div class="bg-white p-4 shadow-md text-center product-card">
+                    <img src="../assets/sonho.webp" alt="Sonho" class="mx-auto product-image">
+                    <p class="font-semibold">Sonho</p>
+                    <p class="text-green-500">R$ 6,99/un</p>
+                    <button class="mt-4 bg-green-500 text-white px-6 py-2 rounded-full hover:bg-green-600 transition-colors">
+                      <a href="produto.html?id=sonho" class="text-white block w-full h-full">Comprar</a>
+                    </button>
+                  </div>
+
+                  <!-- Card 8 -->
+                  <div class="bg-white p-4 shadow-md text-center product-card">
+                    <img src="../assets/baguette.webp" alt="Baguete" class="mx-auto product-image">
+                    <p class="font-semibold">Baguete</p>
+                    <p class="text-green-500">R$ 12,99/un</p>
+                    <button class="mt-4 bg-green-500 text-white px-6 py-2 rounded-full hover:bg-green-600 transition-colors">
+                      <a href="produto.html?id=baguete" class="text-white block w-full h-full">Comprar</a>
+                    </button>
+                  </div>
+
+                  <!-- Card 9 -->
+                  <div class="bg-white p-4 shadow-md text-center product-card">
+                    <img src="../assets/rosca.webp" alt="Rosca Doce" class="mx-auto product-image">
+                    <p class="font-semibold">Rosca Doce</p>
+                    <p class="text-green-500">R$ 18,99/un</p>
+                    <button class="mt-4 bg-green-500 text-white px-6 py-2 rounded-full hover:bg-green-600 transition-colors">
+                      <a href="produto.html?id=rosca-doce" class="text-white block w-full h-full">Comprar</a>
+                    </button>
+                  </div>
+
+                  <!-- Card 10 -->
+                  <div class="bg-white p-4 shadow-md text-center product-card">
+                    <img src="../assets/pie.webp" alt="Torta" class="mx-auto product-image">
+                    <p class="font-semibold">Torta de Maçã</p>
+                    <p class="text-green-500">R$ 35,99/kg</p>
+                    <button class="mt-4 bg-green-500 text-white px-6 py-2 rounded-full hover:bg-green-600 transition-colors">
+                      <a href="produto.html?id=torta-de-maca" class="text-white block w-full h-full">Comprar</a>
+                    </button>
+                  </div>
+
+                  <!-- Card 11 -->
+                  <div class="bg-white p-4 shadow-md text-center product-card">
+                    <img src="../assets/brioche.webp" alt="Brioche" class="mx-auto product-image">
+                    <p class="font-semibold">Brioche</p>
+                    <p class="text-green-500">R$ 22,99/un</p>
+                    <button class="mt-4 bg-green-500 text-white px-6 py-2 rounded-full hover:bg-green-600 transition-colors">
+                      <a href="produto.html?id=brioche" class="text-white block w-full h-full">Comprar</a>
+                    </button>
+                  </div>
+
+                  <!-- Card 12 -->
+                  <div class="bg-white p-4 shadow-md text-center product-card">
+                    <img src="../assets/coxinha.webp" alt="Coxinha" class="mx-auto product-image">
+                    <p class="font-semibold">Coxinha</p>
+                    <p class="text-green-500">R$ 7,99/un</p>
+                    <button class="mt-4 bg-green-500 text-white px-6 py-2 rounded-full hover:bg-green-600 transition-colors">
+                      <a href="produto.html?id=coxinha" class="text-white block w-full h-full">Comprar</a>
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Grid Carnes -->
+                <div class="products-grid mt-8 min-w-full">
+                  <!-- Card 1 -->
+                  <div class="bg-white p-4 shadow-md text-center product-card" data-price="89.99" data-discount="30">
+                    <div class="relative">
+                      <img src="../assets/file-mignon.webp" alt="Filé Mignon" class="mx-auto product-image">
+                      <span class="absolute top-0 right-0 bg-red-500 text-white px-2 py-1 rounded-bl-lg">-30%</span>
+                    </div>
+                    <p class="font-semibold">Filé Mignon</p>
+                    <p class="text-gray-500 line-through text-sm">R$ 128,56/kg</p>
+                    <p class="text-green-500">R$ 89,99/kg</p>
+                    <button class="mt-4 bg-green-500 text-white px-6 py-2 rounded-full hover:bg-green-600 transition-colors">
+                      <a href="produto.html?id=file-mignon" class="text-white block w-full h-full">Comprar</a>
+                    </button>
+                  </div>
+
+                  <!-- Card 2 -->
+                  <div class="bg-white p-4 shadow-md text-center product-card">
+                    <img src="../assets/peito-de-frango.webp" alt="Peito de Frango" class="mx-auto product-image">
+                    <p class="font-semibold">Peito de Frango</p>
+                    <p class="text-green-500">R$ 29,99/kg</p>
+                    <button class="mt-4 bg-green-500 text-white px-6 py-2 rounded-full hover:bg-green-600 transition-colors">
+                      <a href="produto.html?id=peito-de-frango" class="text-white block w-full h-full">Comprar</a>
+                    </button>
+                  </div>
+
+                  <!-- Card 3 -->
+                  <div class="bg-white p-4 shadow-md text-center product-card">
+                    <img src="../assets/picanha.jpg" alt="Picanha" class="mx-auto product-image">
+                    <p class="font-semibold">Picanha</p>
+                    <p class="text-green-500">R$ 99,99/kg</p>
+                    <button class="mt-4 bg-green-500 text-white px-6 py-2 rounded-full hover:bg-green-600 transition-colors">
+                      <a href="produto.html?id=picanha" class="text-white block w-full h-full">Comprar</a>
+                    </button>
+                  </div>
+
+                  <!-- Card 4 -->
+                  <div class="bg-white p-4 shadow-md text-center product-card">
+                    <img src="../assets/costela.webp" alt="Costela Premium" class="mx-auto product-image">
+                    <p class="font-semibold">Costela Premium</p>
+                    <p class="text-green-500">R$ 49,99/kg</p>
+                    <button class="mt-4 bg-green-500 text-white px-6 py-2 rounded-full hover:bg-green-600 transition-colors">
+                      <a href="produto.html?id=costela-premium" class="text-white block w-full h-full">Comprar</a>
+                    </button>
+                  </div>
+
+                  <!-- Card 5 -->
+                  <div class="bg-white p-4 shadow-md text-center product-card">
+                    <img src="../assets/Linguiça.jpg" alt="Linguiça Artesanal" class="mx-auto product-image">
+                    <p class="font-semibold">Linguiça Artesanal</p>
+                    <p class="text-green-500">R$ 32,99/kg</p>
+                    <button class="mt-4 bg-green-500 text-white px-6 py-2 rounded-full hover:bg-green-600 transition-colors">
+                      <a href="produto.html?id=linguica-artesanal" class="text-white block w-full h-full">Comprar</a>
+                    </button>
+                  </div>
+
+                  <!-- Card 6 -->
+                  <div class="bg-white p-4 shadow-md text-center product-card">
+                    <img src="../assets/alcatra.webp" alt="Alcatra" class="mx-auto product-image">
+                    <p class="font-semibold">Alcatra</p>
+                    <p class="text-green-500">R$ 59,99/kg</p>
+                    <button class="mt-4 bg-green-500 text-white px-6 py-2 rounded-full hover:bg-green-600 transition-colors">
+                      <a href="produto.html?id=alcatra" class="text-white block w-full h-full">Comprar</a>
+                    </button>
+                  </div>
+
+                  <!-- Card 7 -->
+                  <div class="bg-white p-4 shadow-md text-center product-card">
+                    <img src="../assets/pernil.jpg" alt="Pernil de Cordeiro" class="mx-auto product-image">
+                    <p class="font-semibold">Pernil de Cordeiro</p>
+                    <p class="text-green-500">R$ 89,99/kg</p>
+                    <button class="mt-4 bg-green-500 text-white px-6 py-2 rounded-full hover:bg-green-600 transition-colors">
+                      <a href="produto.html?id=pernil-de-cordeiro" class="text-white block w-full h-full">Comprar</a>
+                    </button>
+                  </div>
+
+                  <!-- Card 8 -->
+                  <div class="bg-white p-4 shadow-md text-center product-card">
+                    <img src="../assets/coxa-de-frango.webp" alt="Coxa de Frango" class="mx-auto product-image">
+                    <p class="font-semibold">Coxa de Frango</p>
+                    <p class="text-green-500">R$ 19,99/kg</p>
+                    <button class="mt-4 bg-green-500 text-white px-6 py-2 rounded-full hover:bg-green-600 transition-colors">
+                      <a href="produto.html?id=coxa-de-frango" class="text-white block w-full h-full">Comprar</a>
+                    </button>
+                  </div>
+
+                  <!-- Card 9 -->
+                  <div class="bg-white p-4 shadow-md text-center product-card">
+                    <img src="../assets/contrafile.webp" alt="Contra Filé" class="mx-auto product-image">
+                    <p class="font-semibold">Contra Filé</p>
+                    <p class="text-green-500">R$ 69,99/kg</p>
+                    <button class="mt-4 bg-green-500 text-white px-6 py-2 rounded-full hover:bg-green-600 transition-colors">
+                      <a href="produto.html?id=contra-file" class="text-white block w-full h-full">Comprar</a>
+                    </button>
+                  </div>
+
+                  <!-- Card 10 -->
+                  <div class="bg-white p-4 shadow-md text-center product-card">
+                    <img src="../assets/cupim.jpeg" alt="Cupim" class="mx-auto product-image">
+                    <p class="font-semibold">Cupim</p>
+                    <p class="text-green-500">R$ 54,99/kg</p>
+                    <button class="mt-4 bg-green-500 text-white px-6 py-2 rounded-full hover:bg-green-600 transition-colors">
+                      <a href="produto.html?id=cupim" class="text-white block w-full h-full">Comprar</a>
+                    </button>
+                  </div>
+
+                  <!-- Card 11 -->
+                  <div class="bg-white p-4 shadow-md text-center product-card">
+                    <img src="../assets/maminha.webp" alt="Maminha" class="mx-auto product-image">
+                    <p class="font-semibold">Maminha</p>
+                    <p class="text-green-500">R$ 64,99/kg</p>
+                    <button class="mt-4 bg-green-500 text-white px-6 py-2 rounded-full hover:bg-green-600 transition-colors">
+                      <a href="produto.html?id=maminha" class="text-white block w-full h-full">Comprar</a>
+                    </button>
+                  </div>
+
+                  <!-- Card 12 -->
+                  <div class="bg-white p-4 shadow-md text-center product-card">
+                    <img src="../assets/bisteca.webp" alt="Bisteca Suína" class="mx-auto product-image">
+                    <p class="font-semibold">Bisteca Suína</p>
+                    <p class="text-green-500">R$ 29,99/kg</p>
+                    <button class="mt-4 bg-green-500 text-white px-6 py-2 rounded-full hover:bg-green-600 transition-colors">
+                      <a href="produto.html?id=bisteca-suina" class="text-white block w-full h-full">Comprar</a>
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Grid Comidas e Bebidas -->
+                <div class="products-grid mt-8 min-w-full">
+                  <!-- Card 1 -->
+                  <div class="bg-white p-4 shadow-md text-center product-card">
+                    <img src="../assets/Suco_de_Laranja.webp" alt="Suco de Laranja" class="mx-auto product-image">
+                    <p class="font-semibold">Suco de Laranja Natural</p>
+                    <p class="text-green-500">R$ 12,99/L</p>
+                    <button class="mt-4 bg-green-500 text-white px-6 py-2 rounded-full hover:bg-green-600 transition-colors">
+                      <a href="produto.html?id=suco-de-laranja" class="text-white block w-full h-full">Comprar</a>
+                    </button>
+                  </div>
+
+                  <!-- Card 2 -->
+                  <div class="bg-white p-4 shadow-md text-center product-card">
+                    <img src="../assets/granola.webp" alt="Granola" class="mx-auto product-image">
+                    <p class="font-semibold">Granola Artesanal</p>
+                    <p class="text-green-500">R$ 24,99/500g</p>
+                    <button class="mt-4 bg-green-500 text-white px-6 py-2 rounded-full hover:bg-green-600 transition-colors">
+                      <a href="produto.html?id=granola" class="text-white block w-full h-full">Comprar</a>
+                    </button>
+                  </div>
+
+                  <!-- Card 3 -->
+                  <div class="bg-white p-4 shadow-md text-center product-card">
+                    <img src="../assets/cha-verde.jpg" alt="Chá Verde" class="mx-auto product-image">
+                    <p class="font-semibold">Chá Verde Orgânico</p>
+                    <p class="text-green-500">R$ 15,99/100g</p>
+                    <button class="mt-4 bg-green-500 text-white px-6 py-2 rounded-full hover:bg-green-600 transition-colors">
+                      <a href="produto.html?id=cha-verde" class="text-white block w-full h-full">Comprar</a>
+                    </button>
+                  </div>
+
+                  <!-- Card 4 -->
+                  <div class="bg-white p-4 shadow-md text-center product-card">
+                    <img src="../assets/cafe.png" alt="Café Orgânico" class="mx-auto product-image">
+                    <p class="font-semibold">Café Orgânico</p>
+                    <p class="text-green-500">R$ 29,99/500g</p>
+                    <button class="mt-4 bg-green-500 text-white px-6 py-2 rounded-full hover:bg-green-600 transition-colors">
+                      <a href="produto.html?id=cafe-organico" class="text-white block w-full h-full">Comprar</a>
+                    </button>
+                  </div>
+
+                  <!-- Card 5 -->
+                  <div class="bg-white p-4 shadow-md text-center product-card" data-price="15.99" data-discount="10">
+                    <div class="relative">
+                      <img src="../assets/Monster.webp" alt="Monster" class="mx-auto product-image">
+                      <span class="absolute top-0 right-0 bg-red-500 text-white px-2 py-1 rounded-bl-lg">-10%</span>
+                    </div>
+                    <p class="font-semibold">Energético Monster</p>
+                    <p class="text-gray-500 line-through text-sm">R$ 17,77/500ml</p>
+                    <p class="text-green-500">R$ 15,99/500ml</p>
+                    <button class="mt-4 bg-green-500 text-white px-6 py-2 rounded-full hover:bg-green-600 transition-colors">
+                      <a href="produto.html?id=energetico-monster" class="text-white block w-full h-full">Comprar</a>
+                    </button>
+                  </div>
+
+                  <!-- Card 6 -->
+                  <div class="bg-white p-4 shadow-md text-center product-card">
+                    <img src="../assets/mel.webp" alt="Mel Puro" class="mx-auto product-image">
+                    <p class="font-semibold">Mel Puro</p>
+                    <p class="text-green-500">R$ 35,99/500g</p>
+                    <button class="mt-4 bg-green-500 text-white px-6 py-2 rounded-full hover:bg-green-600 transition-colors">
+                      <a href="produto.html?id=mel-puro" class="text-white block w-full h-full">Comprar</a>
+                    </button>
+                  </div>
+
+                  <!-- Card 7 -->
+                  <div class="bg-white p-4 shadow-md text-center product-card">
+                    <img src="../assets/Castanha-de-Caju.webp" alt="Castanha de Caju" class="mx-auto product-image">
+                    <p class="font-semibold">Mix de Castanhas</p>
+                    <p class="text-green-500">R$ 45,99/500g</p>
+                    <button class="mt-4 bg-green-500 text-white px-6 py-2 rounded-full hover:bg-green-600 transition-colors">
+                      <a href="produto.html?id=mix-de-castanhas" class="text-white block w-full h-full">Comprar</a>
+                    </button>
+                  </div>
+
+                  <!-- Card 8 -->
+                  <div class="bg-white p-4 shadow-md text-center product-card">
+                    <img src="../assets/goji.jpg" alt="Goji Berry" class="mx-auto product-image">
+                    <p class="font-semibold">Goji Berry</p>
+                    <p class="text-green-500">R$ 39,99/200g</p>
+                    <button class="mt-4 bg-green-500 text-white px-6 py-2 rounded-full hover:bg-green-600 transition-colors">
+                      <a href="produto.html?id=goji-berry" class="text-white block w-full h-full">Comprar</a>
+                    </button>
+                  </div>
+
+                  <!-- Card 9 -->
+                  <div class="bg-white p-4 shadow-md text-center product-card">
+                    <img src="../assets/quinoa.webp" alt="Quinoa" class="mx-auto product-image">
+                    <p class="font-semibold">Quinoa</p>
+                    <p class="text-green-500">R$ 25,99/500g</p>
+                    <button class="mt-4 bg-green-500 text-white px-6 py-2 rounded-full hover:bg-green-600 transition-colors">
+                      <a href="produto.html?id=quinoa" class="text-white block w-full h-full">Comprar</a>
+                    </button>
+                  </div>
+
+                  <!-- Card 10 -->
+                  <div class="bg-white p-4 shadow-md text-center product-card">
+                    <img src="../assets/suco_verde.webp" alt="Suco Verde" class="mx-auto product-image">
+                    <p class="font-semibold">Suco Verde</p>
+                    <p class="text-green-500">R$ 13,99/500ml</p>
+                    <button class="mt-4 bg-green-500 text-white px-6 py-2 rounded-full hover:bg-green-600 transition-colors">
+                      <a href="produto.html?id=suco-verde" class="text-white block w-full h-full">Comprar</a>
+                    </button>
+                  </div>
+
+                  <!-- Card 11 -->
+                  <div class="bg-white p-4 shadow-md text-center product-card">
+                    <img src="../assets/açaí.webp" alt="Açaí Orgânico" class="mx-auto product-image">
+                    <p class="font-semibold">Açaí Orgânico</p>
+                    <p class="text-green-500">R$ 29,99/500g</p>
+                    <button class="mt-4 bg-green-500 text-white px-6 py-2 rounded-full hover:bg-green-600 transition-colors">
+                      <a href="produto.html?id=açai-organico" class="text-white block w-full h-full">Comprar</a>
+                    </button>
+                  </div>
+
+                  <!-- Card 12 -->
+                  <div class="bg-white p-4 shadow-md text-center product-card">
+                    <img src="../assets/pasta-de-amendoim.webp" alt="Pasta de Amendoim" class="mx-auto product-image">
+                    <p class="font-semibold">Pasta de Amendoim</p>
+                    <p class="text-green-500">R$ 19,99/500g</p>
+                    <button class="mt-4 bg-green-500 text-white px-6 py-2 rounded-full hover:bg-green-600 transition-colors">
+                      <a href="produto.html?id=pasta-de-amendoim" class="text-white block w-full h-full">Comprar</a>
+                    </button>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
