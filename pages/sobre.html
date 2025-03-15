@@ -14,6 +14,7 @@
       src="https://kit.fontawesome.com/447127b9bf.js"
       crossorigin="anonymous"
     ></script>
+    <script src="../js/cart.js"></script>
   </head>
   <body class="bg-gray-50 font-[Poppins]">
     <nav class="bg-white shadow-md py-4 px-6 flex justify-between items-center">
@@ -44,9 +45,10 @@
           </div>
           <!-- Icons -->
           <div class="flex space-x-4 text-xl">
-            <span class="cursor-pointer">
+            <span class="cursor-pointer relative">
               <a href="carrinho.html">
                 <i class="fa-solid fa-cart-shopping text-gray-700 hover:text-green-500 cursor-pointer hover-underline"></i>
+                <span id="cart-count" class="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center" style="display: none;">0</span>
               </a>
             </span>
             <span class="cursor-pointer">

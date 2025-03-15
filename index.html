@@ -15,14 +15,15 @@
       src="https://kit.fontawesome.com/447127b9bf.js"
       crossorigin="anonymous"
     ></script>
+    <script src="js/cart.js"></script>
   </head>
   <body class="bg-gray-100 font-[Poppins]">
     <!-- Navbar -->
-    <nav class="bg-white shadow-md py-4 px-6 flex justify-between items-center relative">
-      <div class="text-green-600 text-2xl font-bold">
+    <nav class="bg-white shadow-md py-2 md:py-4 px-4 md:px-6 flex flex-col md:flex-row justify-between items-center relative">
+      <div class="text-green-600 text-xl md:text-2xl font-bold mb-4 md:mb-0">
         <a href="index.html">Supermercado🌿</a>
       </div>
-      <ul class="flex space-x-6 text-gray-700 text-lg">
+      <ul class="flex flex-wrap justify-center space-x-3 md:space-x-6 text-gray-700 text-base md:text-lg mb-4 md:mb-0">
         <li class="font-semibold border-b-2 border-green-500 hover-underline">
           <a href="index.html">Home</a>
         </li>
@@ -36,19 +37,20 @@
           <a href="./pages/contato.html">Contato</a>
         </li>
       </ul>
-      <div class="flex items-center space-x-4">
+      <div class="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-4 w-full md:w-auto">
         <!-- Search Bar -->
-        <div class="flex items-center rounded-full overflow-hidden bg-white border border-gray-300">
-          <input type="text" placeholder="Pesquisar produtos" class="px-4 py-2 w-48 focus:outline-none text-sm text-gray-500">
+        <div class="flex items-center rounded-full overflow-hidden bg-white border border-gray-300 w-full md:w-48">
+          <input type="text" placeholder="Pesquisar produtos" class="px-4 py-2 w-full focus:outline-none text-sm text-gray-500">
           <button class="px-3">
             <i class="fa-solid fa-magnifying-glass text-gray-700 hover:text-green-500 cursor-pointer"></i>
           </button>
         </div>
         <!-- Icons -->
         <div class="flex space-x-4 text-xl">
-          <span class="cursor-pointer">
+          <span class="cursor-pointer relative">
             <a href="./pages/carrinho.html">
               <i class="fa-solid fa-cart-shopping text-gray-700 hover:text-green-500 cursor-pointer hover-underline"></i>
+              <span id="cart-count" class="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center" style="display: none;">0</span>
             </a>
           </span>
           <span class="cursor-pointer">
@@ -62,357 +64,221 @@
 
     <main>
       <!-- Hero Section -->
-      <section
-        class="h-[80vh] flex flex-col justify-center items-center text-center relative overflow-hidden"
-      >
+      <section class="h-[80vh] flex flex-col justify-center items-center text-center relative overflow-hidden">
         <!-- Slides Container -->
         <div id="heroSlides" class="w-full h-full relative">
           <!-- Slide 1 -->
-          <div
-            class="hero-slide active absolute w-full h-full flex justify-between items-center px-20 overflow-hidden"
-          >
+          <div class="hero-slide active absolute w-full h-full flex flex-col-reverse lg:flex-row justify-between items-center px-4 lg:px-20 overflow-hidden">
             <!-- Background SVG -->
             <div class="absolute inset-0 z-0">
-              <svg
-                viewBox="0 0 1000 1000"
-                preserveAspectRatio="none"
-                class="w-full h-full"
-              >
-                <path
-                  d="M0,200 C300,400 700,100 1000,300 L1000,1000 L0,1000 Z"
-                  class="fill-lime-500"
-                ></path>
-                <path
-                  d="M0,400 C300,600 700,300 1000,500 L1000,1000 L0,1000 Z"
-                  class="fill-lime-500/5"
-                ></path>
+              <svg viewBox="0 0 1000 1000" preserveAspectRatio="none" class="w-full h-full">
+                <path d="M0,200 C300,400 700,100 1000,300 L1000,1000 L0,1000 Z" class="fill-lime-500"></path>
+                <path d="M0,400 C300,600 700,300 1000,500 L1000,1000 L0,1000 Z" class="fill-lime-500/5"></path>
               </svg>
             </div>
-            <div class="text-left max-w-lg z-10">
-              <p class="text-green-600 text-sm font-semibold mb-2">
-                Produtos Orgânicos da Melhor Qualidade
-              </p>
-              <h1 class="text-5xl font-bold text-gray-800 mb-4">
-                Gostosos e Saudáveis<br />Comida Orgânica
-              </h1>
-              <button
-                class="mt-4 bg-green-600 text-white px-8 py-3 rounded hover:bg-green-700"
-              >
-                Shop Now
-              </button>
+            <div class="text-center lg:text-left max-w-lg z-10 mt-8 lg:mt-0">
+              <p class="text-green-600 text-xs md:text-sm font-semibold mb-2">Produtos Orgânicos da Melhor Qualidade</p>
+              <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 mb-4">Gostosos e Saudáveis<br />Comida Orgânica</h1>
+              <button class="mt-4 bg-green-600 text-white px-6 md:px-8 py-2 md:py-3 rounded hover:bg-green-700">Shop Now</button>
             </div>
-            <div class="flex-1 relative h-full z-10">
-              <img
-                src="assets/Brocoli.webp"
-                alt="Vegetais Orgânicos"
-                class="absolute right-0 -bottom-5 w-[575px] h-auto object-contain transform scale-125"
-              />
+            <div class="flex-1 relative h-[45vh] md:h-[55vh] lg:h-full z-10 w-full lg:w-auto flex items-center justify-center lg:block">
+              <img src="assets/Brocoli.webp" alt="Vegetais Orgânicos" class="w-[80%] md:w-[90%] lg:w-[575px] h-auto object-contain md:max-h-[500px] lg:absolute lg:right-0 lg:-bottom-5 lg:transform lg:scale-125" />
             </div>
           </div>
 
           <!-- Slide 2 -->
-          <div
-            class="hero-slide absolute w-full h-full flex justify-between items-center px-20 overflow-hidden opacity-0"
-          >
+          <div class="hero-slide absolute w-full h-full flex flex-col-reverse lg:flex-row justify-between items-center px-4 lg:px-20 overflow-hidden opacity-0">
             <!-- Background SVG -->
             <div class="absolute inset-0 z-0">
-              <svg
-                viewBox="0 0 1000 1000"
-                preserveAspectRatio="none"
-                class="w-full h-full"
-              >
-                <path
-                  d="M0,200 C300,400 700,100 1000,300 L1000,1000 L0,1000 Z"
-                  class="fill-lime-500"
-                ></path>
-                <path
-                  d="M0,400 C300,600 700,300 1000,500 L1000,1000 L0,1000 Z"
-                  class="fill-lime-500/5"
-                ></path>
+              <svg viewBox="0 0 1000 1000" preserveAspectRatio="none" class="w-full h-full">
+                <path d="M0,200 C300,400 700,100 1000,300 L1000,1000 L0,1000 Z" class="fill-lime-500"></path>
+                <path d="M0,400 C300,600 700,300 1000,500 L1000,1000 L0,1000 Z" class="fill-lime-500/5"></path>
               </svg>
             </div>
-            <div class="text-left max-w-lg z-10">
-              <p class="text-green-600 text-sm font-semibold mb-2">
-                Frutas Frescas da Estação
-              </p>
-              <h1 class="text-5xl font-bold text-gray-800 mb-4">
-                Frutas Frescas<br />& Saudáveis
-              </h1>
-              <button
-                class="mt-4 bg-green-600 text-white px-8 py-3 rounded hover:bg-green-700"
-              >
-                Ver Ofertas
-              </button>
+            <div class="text-center lg:text-left max-w-lg z-10 mt-8 lg:mt-0">
+              <p class="text-green-600 text-xs md:text-sm font-semibold mb-2">Frutas Frescas da Estação</p>
+              <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 mb-4">Frutas Frescas<br />& Saudáveis</h1>
+              <button class="mt-4 bg-green-600 text-white px-6 md:px-8 py-2 md:py-3 rounded hover:bg-green-700">Ver Ofertas</button>
             </div>
-            <div class="flex-1 relative h-full z-10">
-              <img
-                src="assets/Frutas.webp"
-                alt="Frutas Frescas"
-                class="absolute right-0 -bottom-5 w-[675px] h-auto object-contain transform scale-125"
-              />
+            <div class="flex-1 relative h-[45vh] md:h-[55vh] lg:h-full z-10 w-full lg:w-auto flex items-center justify-center lg:block">
+              <img src="assets/Frutas.webp" alt="Frutas Frescas" class="w-[80%] md:w-[90%] lg:w-[575px] h-auto object-contain md:max-h-[500px] lg:absolute lg:right-0 lg:-bottom-5 lg:transform lg:scale-125" />
             </div>
           </div>
 
           <!-- Slide 3 -->
-          <div
-            class="hero-slide absolute w-full h-full flex justify-between items-center px-20 overflow-hidden opacity-0"
-          >
+          <div class="hero-slide absolute w-full h-full flex flex-col-reverse lg:flex-row justify-between items-center px-4 lg:px-20 overflow-hidden opacity-0">
             <!-- Background SVG -->
             <div class="absolute inset-0 z-0">
-              <svg
-                viewBox="0 0 1000 1000"
-                preserveAspectRatio="none"
-                class="w-full h-full"
-              >
-                <path
-                  d="M0,200 C300,400 700,100 1000,300 L1000,1000 L0,1000 Z"
-                  class="fill-lime-500"
-                ></path>
-                <path
-                  d="M0,400 C300,600 700,300 1000,500 L1000,1000 L0,1000 Z"
-                  class="fill-lime-500/5"
-                ></path>
+              <svg viewBox="0 0 1000 1000" preserveAspectRatio="none" class="w-full h-full">
+                <path d="M0,200 C300,400 700,100 1000,300 L1000,1000 L0,1000 Z" class="fill-lime-500"></path>
+                <path d="M0,400 C300,600 700,300 1000,500 L1000,1000 L0,1000 Z" class="fill-lime-500/5"></path>
               </svg>
             </div>
-            <div class="text-left max-w-lg z-10">
-              <p class="text-green-600 text-sm font-semibold mb-2">
-                Salada e Legumes Selecionados
-              </p>
-              <h1 class="text-5xl font-bold text-gray-800 mb-4">
-                Salada<br />& Legumes Orgânicos
-              </h1>
-              <button
-                class="mt-4 bg-green-600 text-white px-8 py-3 rounded hover:bg-green-700"
-              >
-                Explorar
-              </button>
+            <div class="text-center lg:text-left max-w-lg z-10 mt-8 lg:mt-0">
+              <p class="text-green-600 text-xs md:text-sm font-semibold mb-2">Salada e Legumes Selecionados</p>
+              <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 mb-4">Salada<br />& Legumes Orgânicos</h1>
+              <button class="mt-4 bg-green-600 text-white px-6 md:px-8 py-2 md:py-3 rounded hover:bg-green-700">Explorar</button>
             </div>
-            <div class="flex-1 relative h-full z-10">
-              <img
-                src="assets/Salada.webp"
-                alt="Diversos Legumes e Saladas"
-                class="absolute right-0 w-[700px] h-auto object-contain transform scale-125"
-              />
+            <div class="flex-1 relative h-[45vh] md:h-[55vh] lg:h-full z-10 w-full lg:w-auto flex items-center justify-center lg:block">
+              <img src="assets/Salada.webp" alt="Diversos Legumes e Saladas" class="w-[80%] md:w-[90%] lg:w-[575px] h-auto object-contain md:max-h-[500px] lg:absolute lg:right-0 lg:-bottom-5 lg:transform lg:scale-125" />
             </div>
           </div>
         </div>
 
         <!-- Navigation Buttons -->
-        <button
-          id="prevHeroBtn"
-          class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/80 text-gray-700 rounded-full w-10 h-10 flex items-center justify-center hover:bg-white transition-colors z-20"
-        >
+        <button id="prevHeroBtn" class="absolute left-2 md:left-4 top-1/2 transform -translate-y-1/2 bg-white/80 text-gray-700 rounded-full w-8 md:w-10 h-8 md:h-10 flex items-center justify-center hover:bg-white transition-colors z-20">
           <i class="fa-solid fa-chevron-left"></i>
         </button>
-        <button
-          id="nextHeroBtn"
-          class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/80 text-gray-700 rounded-full w-10 h-10 flex items-center justify-center hover:bg-white transition-colors z-20"
-        >
+        <button id="nextHeroBtn" class="absolute right-2 md:right-4 top-1/2 transform -translate-y-1/2 bg-white/80 text-gray-700 rounded-full w-8 md:w-10 h-8 md:h-10 flex items-center justify-center hover:bg-white transition-colors z-20">
           <i class="fa-solid fa-chevron-right"></i>
         </button>
 
         <!-- Dots Navigation -->
-        <div
-          class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2 z-20"
-        >
-          <button
-            class="hero-dot w-3 h-3 rounded-full bg-white/50 hover:bg-white transition-colors"
-          ></button>
-          <button
-            class="hero-dot w-3 h-3 rounded-full bg-white/50 hover:bg-white transition-colors"
-          ></button>
-          <button
-            class="hero-dot w-3 h-3 rounded-full bg-white/50 hover:bg-white transition-colors"
-          ></button>
+        <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2 z-20">
+          <button class="hero-dot w-2 md:w-3 h-2 md:h-3 rounded-full bg-white/50 hover:bg-white transition-colors"></button>
+          <button class="hero-dot w-2 md:w-3 h-2 md:h-3 rounded-full bg-white/50 hover:bg-white transition-colors"></button>
+          <button class="hero-dot w-2 md:w-3 h-2 md:h-3 rounded-full bg-white/50 hover:bg-white transition-colors"></button>
         </div>
       </section>
 
       <!-- Destaques Section -->
-      <section class="py-16 px-6">
-        <div class="grid grid-cols-3 gap-6 max-w-6xl mx-auto">
+      <section class="py-8 md:py-16 px-4 md:px-6">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 max-w-6xl mx-auto">
           <!-- Orange Juice Card -->
-          <div
-            class="bg-white col-span-2 p-8 rounded-lg flex relative overflow-hidden"
-          >
+          <div class="bg-white col-span-1 md:col-span-2 p-4 md:p-8 rounded-lg flex flex-col md:flex-row relative overflow-hidden">
             <div class="curved-background">
               <svg viewBox="0 0 1000 400" preserveAspectRatio="none">
-                <path
-                  d="M0,100 C300,300 700,0 1000,100 L1000,400 L0,400 Z"
-                ></path>
+                <path d="M0,100 C300,300 700,0 1000,100 L1000,400 L0,400 Z"></path>
               </svg>
             </div>
-            <div class="content-wrapper flex-1">
-              <h3
-                class="text-2xl text-white font-semibold mb-2 [text-shadow:_2px_2px_2px_rgb(0_0_0_/_20%)]"
-              >
-                Suco de Laranja
-              </h3>
-              <p
-                class="text-white uppercase text-sm [text-shadow:_1px_1px_1px_rgb(0_0_0_/_20%)]"
-              >
-                Melhor sabor
-              </p>
-              <p
-                class="text-white uppercase text-sm [text-shadow:_1px_1px_1px_rgb(0_0_0_/_20%)]"
-              >
-                que você nunca vai esquecer
-              </p>
-              <button
-                class="bg-lime-500 text-white px-6 py-2 rounded-full mt-6 hover:bg-lime-600"
-              >
-                Shop Now
-              </button>
+            <div class="content-wrapper flex-1 text-center md:text-left mb-4 md:mb-0">
+              <h3 class="text-xl md:text-2xl text-white font-semibold mb-2 [text-shadow:_2px_2px_2px_rgb(0_0_0_/_20%)]">Suco de Laranja</h3>
+              <p class="text-white uppercase text-xs md:text-sm [text-shadow:_1px_1px_1px_rgb(0_0_0_/_20%)]">Melhor sabor</p>
+              <p class="text-white uppercase text-xs md:text-sm [text-shadow:_1px_1px_1px_rgb(0_0_0_/_20%)]">que você nunca vai esquecer</p>
+              <button class="bg-lime-500 text-white px-4 md:px-6 py-2 rounded-full mt-4 md:mt-6 hover:bg-lime-600 text-sm md:text-base">Shop Now</button>
             </div>
             <div class="content-wrapper flex-1 relative">
-              <img
-                src="assets/Suco_de_Laranja.webp"
-                alt="Green Lemon & Orange Juice"
-                class="absolute bottom-0 right-0 w-full h-auto object-contain"
-              />
+              <img src="assets/Suco_de_Laranja.webp" alt="Green Lemon & Orange Juice" class="mx-auto md:absolute md:bottom-0 md:right-0 w-48 md:w-full h-auto object-contain" />
             </div>
           </div>
 
-          <div class="space-y-6">
+          <div class="space-y-4 md:space-y-6">
             <!-- Castanha Card -->
-            <div
-              class="bg-white p-6 rounded-lg flex justify-between items-center"
-            >
+            <div class="bg-white p-4 md:p-6 rounded-lg flex justify-between items-center">
               <div>
-                <h3 class="text-lg font-semibold">
-                  Até 15% off Fresh<br />Castanha de Caju
-                </h3>
-                <button
-                  class="bg-lime-500 text-white px-4 py-1 rounded-full mt-4 text-sm hover:bg-lime-600"
-                >
-                  Shop Now
-                </button>
+                <h3 class="text-base md:text-lg font-semibold">Até 15% off Fresh<br />Castanha de Caju</h3>
+                <button class="bg-lime-500 text-white px-3 md:px-4 py-1 rounded-full mt-2 md:mt-4 text-xs md:text-sm hover:bg-lime-600">Shop Now</button>
               </div>
-              <img
-                src="assets/Castanha-de-Caju.webp"
-                alt="Castanha de Caju"
-                class="w-1/2 h-auto object-contain"
-              />
+              <img src="assets/Castanha-de-Caju.webp" alt="Castanha de Caju" class="w-24 md:w-1/2 h-auto object-contain" />
             </div>
 
-            <!-- Suco de Manga Card -->
-            <div
-              class="bg-white p-6 rounded-lg flex justify-between items-center"
-            >
+            <!-- Monster Card -->
+            <div class="bg-white p-4 md:p-6 rounded-lg flex justify-between items-center">
               <div>
-                <h3 class="text-lg font-semibold">
-                  50% off em<br />Energéticos Monster
-                </h3>
-                <button
-                  class="bg-lime-500 text-white px-4 py-1 rounded-full mt-4 text-sm hover:bg-lime-600"
-                >
-                  Shop Now
-                </button>
+                <h3 class="text-base md:text-lg font-semibold">50% off em<br />Energéticos Monster</h3>
+                <button class="bg-lime-500 text-white px-3 md:px-4 py-1 rounded-full mt-2 md:mt-4 text-xs md:text-sm hover:bg-lime-600">Shop Now</button>
               </div>
-              <img
-                src="assets/Monster.webp"
-                alt="Monster"
-                class="w-1/2 h-auto object-contain"
-              />
+              <img src="assets/Monster.webp" alt="Monster" class="w-24 md:w-1/2 h-auto object-contain" />
             </div>
           </div>
         </div>
       </section>
 
       <!-- Seção Desconto do Dia -->
-      <section class="py-16 px-6 bg-white">
+      <section class="py-8 md:py-16 px-4 md:px-6 bg-white">
         <div class="max-w-6xl mx-auto">
-          <h2 class="text-3xl font-bold text-center mb-2">Desconto do Dia</h2>
-          <p class="text-center text-gray-600 mb-8">Ofertas especiais por tempo limitado!</p>
+          <h2 class="text-2xl md:text-3xl font-bold text-center mb-2">Desconto do Dia</h2>
+          <p class="text-center text-gray-600 mb-6 md:mb-8 text-sm md:text-base">Ofertas especiais por tempo limitado!</p>
           
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
             <!-- Produto 1 -->
-            <div class="bg-white p-6 rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300">
+            <div class="bg-white p-4 md:p-6 rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300">
               <div class="relative">
-                <img src="assets/Mango.webp" alt="Manga" class="mx-auto mb-4" />
-                <div class="absolute top-0 right-0 bg-red-500 text-white px-3 py-1 rounded-full text-sm font-bold">
+                <img src="assets/Mango.webp" alt="Manga" class="mx-auto mb-4 w-32 md:w-auto" />
+                <div class="absolute top-0 right-0 bg-red-500 text-white px-2 md:px-3 py-1 rounded-full text-xs md:text-sm font-bold">
                   -30%
                 </div>
               </div>
-              <h3 class="font-semibold text-lg mb-2">Manga Palmer</h3>
+              <h3 class="font-semibold text-base md:text-lg mb-2">Manga Palmer</h3>
               <div class="flex justify-between items-center mb-4">
                 <div>
-                  <p class="text-green-500 font-bold text-xl">R$5.60</p>
-                  <p class="text-gray-400 line-through text-sm">R$8.00</p>
+                  <p class="text-green-500 font-bold text-lg md:text-xl">R$5.60</p>
+                  <p class="text-gray-400 line-through text-xs md:text-sm">R$8.00</p>
                 </div>
                 <div class="bg-yellow-100 px-2 py-1 rounded">
-                  <p class="text-yellow-800 text-sm">Termina em 12h</p>
+                  <p class="text-yellow-800 text-xs md:text-sm">Termina em 12h</p>
                 </div>
               </div>
-              <button class="w-full bg-green-500 text-white py-2 rounded-full hover:bg-green-600 transition-colors">
+              <button class="w-full bg-green-500 text-white py-2 rounded-full hover:bg-green-600 transition-colors text-sm md:text-base">
                 Adicionar ao Carrinho
               </button>
             </div>
 
             <!-- Produto 2 -->
-            <div class="bg-white p-6 rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300">
+            <div class="bg-white p-4 md:p-6 rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300">
               <div class="relative">
-                <img src="assets/Berries.webp" alt="Berries" class="mx-auto mb-4" />
-                <div class="absolute top-0 right-0 bg-red-500 text-white px-3 py-1 rounded-full text-sm font-bold">
+                <img src="assets/Berries.webp" alt="Berries" class="mx-auto mb-4 w-32 md:w-auto" />
+                <div class="absolute top-0 right-0 bg-red-500 text-white px-2 md:px-3 py-1 rounded-full text-xs md:text-sm font-bold">
                   -40%
                 </div>
               </div>
-              <h3 class="font-semibold text-lg mb-2">Mix de Berries</h3>
+              <h3 class="font-semibold text-base md:text-lg mb-2">Mix de Berries</h3>
               <div class="flex justify-between items-center mb-4">
                 <div>
-                  <p class="text-green-500 font-bold text-xl">R$4.20</p>
-                  <p class="text-gray-400 line-through text-sm">R$7.00</p>
+                  <p class="text-green-500 font-bold text-lg md:text-xl">R$4.20</p>
+                  <p class="text-gray-400 line-through text-xs md:text-sm">R$7.00</p>
                 </div>
                 <div class="bg-yellow-100 px-2 py-1 rounded">
-                  <p class="text-yellow-800 text-sm">Termina em 12h</p>
+                  <p class="text-yellow-800 text-xs md:text-sm">Termina em 12h</p>
                 </div>
               </div>
-              <button class="w-full bg-green-500 text-white py-2 rounded-full hover:bg-green-600 transition-colors">
+              <button class="w-full bg-green-500 text-white py-2 rounded-full hover:bg-green-600 transition-colors text-sm md:text-base">
                 Adicionar ao Carrinho
               </button>
             </div>
 
             <!-- Produto 3 -->
-            <div class="bg-white p-6 rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300">
+            <div class="bg-white p-4 md:p-6 rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300">
               <div class="relative">
-                <img src="assets/Oranges.webp" alt="Laranjas" class="mx-auto mb-4" />
-                <div class="absolute top-0 right-0 bg-red-500 text-white px-3 py-1 rounded-full text-sm font-bold">
+                <img src="assets/Oranges.webp" alt="Laranjas" class="mx-auto mb-4 w-32 md:w-auto" />
+                <div class="absolute top-0 right-0 bg-red-500 text-white px-2 md:px-3 py-1 rounded-full text-xs md:text-sm font-bold">
                   -35%
                 </div>
               </div>
-              <h3 class="font-semibold text-lg mb-2">Laranja Bahia</h3>
+              <h3 class="font-semibold text-base md:text-lg mb-2">Laranja Bahia</h3>
               <div class="flex justify-between items-center mb-4">
                 <div>
-                  <p class="text-green-500 font-bold text-xl">R$2.53</p>
-                  <p class="text-gray-400 line-through text-sm">R$3.90</p>
+                  <p class="text-green-500 font-bold text-lg md:text-xl">R$2.53</p>
+                  <p class="text-gray-400 line-through text-xs md:text-sm">R$3.90</p>
                 </div>
                 <div class="bg-yellow-100 px-2 py-1 rounded">
-                  <p class="text-yellow-800 text-sm">Termina em 12h</p>
+                  <p class="text-yellow-800 text-xs md:text-sm">Termina em 12h</p>
                 </div>
               </div>
-              <button class="w-full bg-green-500 text-white py-2 rounded-full hover:bg-green-600 transition-colors">
+              <button class="w-full bg-green-500 text-white py-2 rounded-full hover:bg-green-600 transition-colors text-sm md:text-base">
                 Adicionar ao Carrinho
               </button>
             </div>
 
             <!-- Produto 4 -->
-            <div class="bg-white p-6 rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300">
+            <div class="bg-white p-4 md:p-6 rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300">
               <div class="relative">
-                <img src="assets/Brocoli.webp" alt="Brócolis" class="mx-auto mb-4" />
-                <div class="absolute top-0 right-0 bg-red-500 text-white px-3 py-1 rounded-full text-sm font-bold">
+                <img src="assets/Brocoli.webp" alt="Brócolis" class="mx-auto mb-4 w-32 md:w-auto" />
+                <div class="absolute top-0 right-0 bg-red-500 text-white px-2 md:px-3 py-1 rounded-full text-xs md:text-sm font-bold">
                   -50%
                 </div>
               </div>
-              <h3 class="font-semibold text-lg mb-2">Brócolis Japonês</h3>
+              <h3 class="font-semibold text-base md:text-lg mb-2">Brócolis Japonês</h3>
               <div class="flex justify-between items-center mb-4">
                 <div>
-                  <p class="text-green-500 font-bold text-xl">R$1.50</p>
-                  <p class="text-gray-400 line-through text-sm">R$3.00</p>
+                  <p class="text-green-500 font-bold text-lg md:text-xl">R$1.50</p>
+                  <p class="text-gray-400 line-through text-xs md:text-sm">R$3.00</p>
                 </div>
                 <div class="bg-yellow-100 px-2 py-1 rounded">
-                  <p class="text-yellow-800 text-sm">Termina em 12h</p>
+                  <p class="text-yellow-800 text-xs md:text-sm">Termina em 12h</p>
                 </div>
               </div>
-              <button class="w-full bg-green-500 text-white py-2 rounded-full hover:bg-green-600 transition-colors">
+              <button class="w-full bg-green-500 text-white py-2 rounded-full hover:bg-green-600 transition-colors text-sm md:text-base">
                 Adicionar ao Carrinho
               </button>
             </div>
@@ -423,12 +289,12 @@
 
     <footer>
       <!-- Footer Section -->
-      <div class="bg-lime-500 text-white py-12">
-        <div class="max-w-7xl mx-auto px-4 grid grid-cols-12 gap-4">
+      <div class="bg-lime-500 text-white py-8 md:py-12">
+        <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8">
           <!-- User Area -->
-          <div class="col-span-2">
-            <h3 class="text-xl font-semibold mb-4">Área do Usuário</h3>
-            <ul class="space-y-2">
+          <div class="lg:col-span-2">
+            <h3 class="text-lg md:text-xl font-semibold mb-4">Área do Usuário</h3>
+            <ul class="space-y-2 text-sm md:text-base">
               <li><a href="#" class="hover:text-gray-200">Minha Conta</a></li>
               <li><a href="#" class="hover:text-gray-200">Meu Carrinho</a></li>
               <li><a href="#" class="hover:text-gray-200">Login</a></li>
@@ -437,24 +303,20 @@
           </div>
 
           <!-- Shopping Guide -->
-          <div class="col-span-2">
-            <h3 class="text-xl font-semibold mb-4">Guia de Compras</h3>
-            <ul class="space-y-2">
+          <div class="lg:col-span-2">
+            <h3 class="text-lg md:text-xl font-semibold mb-4">Guia de Compras</h3>
+            <ul class="space-y-2 text-sm md:text-base">
               <li><a href="#" class="hover:text-gray-200">Pagamento</a></li>
               <li><a href="#" class="hover:text-gray-200">Envio</a></li>
               <li><a href="#" class="hover:text-gray-200">FAQ</a></li>
-              <li>
-                <a href="#" class="hover:text-gray-200"
-                  >Política de Devolução</a
-                >
-              </li>
+              <li><a href="#" class="hover:text-gray-200">Política de Devolução</a></li>
             </ul>
           </div>
 
           <!-- Contact Details -->
-          <div class="col-span-3 ml-8">
-            <h3 class="text-xl font-semibold mb-4">Contato</h3>
-            <ul class="space-y-2">
+          <div class="lg:col-span-3">
+            <h3 class="text-lg md:text-xl font-semibold mb-4">Contato</h3>
+            <ul class="space-y-2 text-sm md:text-base">
               <li class="flex items-center gap-2">
                 <i class="fa-solid fa-location-dot"></i>
                 <span>Setor Comercial Sul, Brasília-DF, Brasil</span>
@@ -471,33 +333,27 @@
           </div>
 
           <!-- Newsletter -->
-          <div class="col-span-4 ml-12">
-            <h3 class="text-xl font-semibold mb-4">Newsletter</h3>
+          <div class="lg:col-span-4">
+            <h3 class="text-lg md:text-xl font-semibold mb-4">Newsletter</h3>
             <div class="flex flex-col gap-4">
-              <input
-                type="email"
-                placeholder="Seu e-mail"
-                class="px-4 py-2 rounded-full text-gray-800"
-              />
-              <button
-                class="bg-green-600 hover:bg-green-700 px-6 py-2 rounded-full transition-colors"
-              >
+              <input type="email" placeholder="Seu e-mail" class="px-4 py-2 rounded-full text-gray-800 w-full md:w-auto" />
+              <button class="bg-green-600 hover:bg-green-700 px-6 py-2 rounded-full transition-colors w-full md:w-auto">
                 Inscrever-se
               </button>
             </div>
             <div class="mt-4">
-              <h4 class="text-lg font-semibold mb-2">Formas de Pagamento</h4>
+              <h4 class="text-base md:text-lg font-semibold mb-2">Formas de Pagamento</h4>
               <div class="flex gap-2">
-                <i class="fa-brands fa-cc-paypal text-2xl"></i>
-                <i class="fa-brands fa-cc-visa text-2xl"></i>
-                <i class="fa-brands fa-cc-mastercard text-2xl"></i>
+                <i class="fa-brands fa-cc-paypal text-xl md:text-2xl"></i>
+                <i class="fa-brands fa-cc-visa text-xl md:text-2xl"></i>
+                <i class="fa-brands fa-cc-mastercard text-xl md:text-2xl"></i>
               </div>
             </div>
           </div>
         </div>
 
         <!-- Copyright -->
-        <div class="border-t border-white/20 mt-8 pt-8 text-center">
+        <div class="border-t border-white/20 mt-8 pt-8 text-center text-sm md:text-base">
           <p>© Copyright 2025 por Supermercado Orgânico™</p>
         </div>
       </div>
