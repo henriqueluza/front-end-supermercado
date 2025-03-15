@@ -45,6 +45,9 @@ npm run dev
 ├── assets/                # Pasta para imagens, ícones e fontes (vazia por enquanto)
 │
 ├── js/                    # Pasta para scripts específicos (vazia por enquanto)
+├   ├── script-shop.js     # Página com Script da página do shop
+│   ├── cart.html          # Página de Script para funções do carrinho
+│   ├── produto.html       # Página de Script para funções dá página do produto               
 │
 ├── pages/                 # Pasta para armazenar os arquivos HTML das páginas secundárias
 │   ├── shop.html          # Página de produtos
